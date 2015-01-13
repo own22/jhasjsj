@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tipo_id: 
+  cidade_id: 
+  bairro_id: 
+  venda: false
+  aluguel: false
+  quartos: 1
+  banheiros: 1
+  suites: 1
+  vagas: 1
+  preco: 1
+  titulo: MyString
+  descricao: MyText
+  descricao_curta: MyText
+
+two:
+  tipo_id: 
+  cidade_id: 
+  bairro_id: 
+  venda: false
+  aluguel: false
+  quartos: 1
+  banheiros: 1
+  suites: 1
+  vagas: 1
+  preco: 1
+  titulo: MyString
+  descricao: MyText
+  descricao_curta: MyText

@@ -1,0 +1,69 @@
+<%= form_for(@imovel) do |f| %>
+  <% if @imovel.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@imovel.errors.count, "error") %> prohibited this imovel from being saved:</h2>
+
+      <ul>
+      <% @imovel.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :tipo_id %><br>
+    <%= f.text_field :tipo_id %>
+  </div>
+  <div class="field">
+    <%= f.label :cidade_id %><br>
+    <%= f.text_field :cidade_id %>
+  </div>
+  <div class="field">
+    <%= f.label :bairro_id %><br>
+    <%= f.text_field :bairro_id %>
+  </div>
+  <div class="field">
+    <%= f.label :venda %><br>
+    <%= f.check_box :venda %>
+  </div>
+  <div class="field">
+    <%= f.label :aluguel %><br>
+    <%= f.check_box :aluguel %>
+  </div>
+  <div class="field">
+    <%= f.label :quartos %><br>
+    <%= f.number_field :quartos %>
+  </div>
+  <div class="field">
+    <%= f.label :banheiros %><br>
+    <%= f.number_field :banheiros %>
+  </div>
+  <div class="field">
+    <%= f.label :suites %><br>
+    <%= f.number_field :suites %>
+  </div>
+  <div class="field">
+    <%= f.label :vagas %><br>
+    <%= f.number_field :vagas %>
+  </div>
+  <div class="field">
+    <%= f.label :preco %><br>
+    <%= f.number_field :preco %>
+  </div>
+  <div class="field">
+    <%= f.label :titulo %><br>
+    <%= f.text_field :titulo %>
+  </div>
+  <div class="field">
+    <%= f.label :descricao %><br>
+    <%= f.text_area :descricao %>
+  </div>
+  <div class="field">
+    <%= f.label :descricao_curta %><br>
+    <%= f.text_area :descricao_curta %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
