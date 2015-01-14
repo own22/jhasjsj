@@ -24,8 +24,8 @@
     <% @imovels.each do |imovel| %>
       <tr>
         <td><%= imovel.tipo.nome unless imovel.tipo.nil? %></td>
-        <td><%= imovel.cidade %></td>
-        <td><%= imovel.bairro %></td>
+        <td><%= imovel.cidade.nome unless imovel.cidade.nil? %></td>
+        <td><%= imovel.bairro.nome unless imovel.bairro.nil? %></td>
         <td><%= imovel.venda %></td>
         <td><%= imovel.aluguel %></td>
         <td><%= imovel.quartos %></td>
