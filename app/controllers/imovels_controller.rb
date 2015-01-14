@@ -4,7 +4,7 @@ class ImovelsController < ApplicationController
   # GET /imovels
   # GET /imovels.json
   def index
-    @imovels = Imovel.all
+    @imovels = Imovel.pesquisa(params[:cidade])
   end
 
   # GET /imovels/1
