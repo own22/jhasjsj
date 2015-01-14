@@ -16,10 +16,12 @@ class Imovel < ActiveRecord::Base
     self.bairro_id = Bairro.find_or_create_by(nome: novo_bairro, cidade_id: self.cidade_id).id unless novo_bairro.blank?
   end
 
-  def self.pesquisa(cidade)
-    if cidade
+  def self.pesquisa(cidade, bairro, tipo)
+    if ( cidade || bairro || tipo )
       imovels = Imovel.all
-      imovels = Imovel.where("cidade_id = ?", cidade["id"]) if cidade.present?
+      imovels = Imovel.where("cidade_id = ?", cidade["id"]) unless cidade["id"].blank?
+      imovels = Imovel.where("bairro_id = ?", bairro["id"]) unless bairro["id"].blank?
+      imovels = Imovel.where("tipo_id = ?", tipo["id"]) unless tipo["id"].blank?
       imovels 
     else
       Imovel.all
