@@ -2,25 +2,30 @@
 (function() {
   jQuery(function() {
     var bairros;
-    bairros = $('#imovel_bairro_id').html();
-    $('#imovel_cidade_id').change(function() {
+    var cidadeDomId = ($("#new_imovel").length) ? "#imovel_cidade_id":"#cidade_id"
+    var bairroDomId = ($("#new_imovel").length) ? "#imovel_bairro_id":"#bairro_id"
+    console.log(cidadeDomId)
+    console.log(bairroDomId)
+
+    bairros = $(bairroDomId).html();
+    $(cidadeDomId).change(function() {
       var cidade, options;
-      cidade = $('#imovel_cidade_id :selected').text();
+      cidade = $(cidadeDomId + ' :selected').text();
       options = $(bairros).filter("optgroup[label='" + cidade + "']").html();
       if (options) {
         options = "<option value=''> Selecione Bairro </option>" + options;
-        return $('#imovel_bairro_id').html(options);
+        return $(bairroDomId).html(options);
       } else if (cidade === "Escolha a cidade") {
-        return $('#imovel_bairro_id').html(bairros);
+        return $(bairroDomId).html(bairros);
       } else {
-        return $('#imovel_bairro_id').empty();
+        return $(bairroDomId).empty();
       }
     });
 
-    $('#imovel_bairro_id').change(function() {
+    $(bairroDomId).change(function() {
       var bairro, selecionar;
       cidade = $(this.options[this.selectedIndex]).closest('optgroup').prop('label');
-      $('#imovel_cidade_id option').filter(function() {
+      $(cidadeDomId + ' option').filter(function() {
         return ($(this).text() == cidade);
       }).prop('selected', true);
     });

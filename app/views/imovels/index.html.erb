@@ -3,7 +3,7 @@
 <%= form_tag imovels_path, :method => "get" do %>
 
     <%= collection_select :cidade, :id, Cidade.order(:nome), :id, :nome, :prompt => "Escolha a cidade" %>
-    <%= collection_select :bairro, :id, Bairro.order(:nome), :id, :nome, :prompt => "Escolha o bairro" %>
+    <%= grouped_collection_select :bairro, :id, Cidade.all.order(:nome), :bairros, :nome, :id, :nome, :prompt => "Escolha o bairro" %>
     <%= collection_select :tipo, :id, Tipo.order(:nome), :id, :nome, :prompt => "Escolha o tipo de imóvel" %>
 
   <%= submit_tag "Buscar", name: "" %>
