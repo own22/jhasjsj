@@ -19,18 +19,17 @@ class Imovel < ActiveRecord::Base
     
   private
 
-
   def cleanup
       
-    if Imovel.find_by(tipo_id: self.tipo_id).nil?
+    if !(self.tipo_id.nil?) && Imovel.find_by(tipo_id: self.tipo_id).nil?
       Tipo.find(self.tipo_id).destroy
     end
 
-    if Imovel.find_by(cidade_id: self.cidade_id).nil?
+    if !(self.cidade_id.nil?) && Imovel.find_by(cidade_id: self.cidade_id).nil?
       Cidade.find(self.cidade_id).destroy
     end
 
-    if Imovel.find_by(bairro_id: self.bairro_id).nil?
+    if !(self.bairro_id.nil?) && Imovel.find_by(bairro_id: self.bairro_id).nil?
       Bairro.find(self.bairro_id).destroy
     end
 
