@@ -23,7 +23,7 @@
   <tbody>
     <% @imovels.each do |imovel| %>
       <tr>
-        <td><%= imovel.tipo %></td>
+        <td><%= imovel.tipo.nome unless imovel.tipo.nil? %></td>
         <td><%= imovel.cidade %></td>
         <td><%= imovel.bairro %></td>
         <td><%= imovel.venda %></td>

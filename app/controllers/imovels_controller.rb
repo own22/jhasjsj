@@ -69,6 +69,6 @@ class ImovelsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def imovel_params
-      params.require(:imovel).permit(:tipo_id, :cidade_id, :bairro_id, :venda, :aluguel, :quartos, :banheiros, :suites, :vagas, :preco, :titulo, :descricao, :descricao_curta)
+      params.require(:imovel).permit(:tipo_id, :cidade_id, :bairro_id, :venda, :aluguel, :quartos, :banheiros, :suites, :vagas, :preco, :titulo, :descricao, :descricao_curta, :novo_tipo)
     end
 end

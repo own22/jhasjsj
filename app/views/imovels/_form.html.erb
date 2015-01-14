@@ -12,9 +12,11 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :tipo_id %><br>
-    <%= f.text_field :tipo_id %>
+    <%= f.collection_select :tipo_id, Tipo.all, :id, :nome, :prompt => "Selecione o tipo de imóvel" %>
+    ou crie um tipo:
+    <%= f.text_field :novo_tipo %>
   </div>
+
   <div class="field">
     <%= f.label :cidade_id %><br>
     <%= f.text_field :cidade_id %>
