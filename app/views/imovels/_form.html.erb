@@ -12,6 +12,16 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :cidade_id %>
+    <%= f.collection_select :cidade_id, Cidade.order(:nome), :id, :nome, :prompt => "Escolha a cidade" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :bairro_id %>
+    <%= f.grouped_collection_select :bairro_id, Cidade.order(:nome), :bairros, :nome, :id, :nome, :prompt => "Escolha o bairro" %>
+  </div>
+
+  <div class="field">
     <%= f.collection_select :tipo_id, Tipo.all, :id, :nome, :prompt => "Selecione o tipo de imóvel" %>
     ou crie um tipo:
     <%= f.text_field :novo_tipo %>

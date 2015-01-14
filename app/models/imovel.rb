@@ -5,9 +5,9 @@ class Imovel < ActiveRecord::Base
 
   attr_accessor :novo_tipo
 
-  before_save :criar_tipo
+  before_save :criar_assossiations
 
-  def criar_tipo
+  def criar_assossiations
     unless novo_tipo.blank?
       self.tipo_id = Tipo.find_or_create_by(nome: novo_tipo).id
     end
