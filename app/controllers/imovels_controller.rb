@@ -28,6 +28,13 @@ class ImovelsController < ApplicationController
 
     respond_to do |format|
       if @imovel.save
+
+        if params[:images]
+          params[:images].each { |image|
+            @imovel.fotos.create(image: image)
+          }
+        end
+
         format.html { redirect_to @imovel, notice: 'Imovel was successfully created.' }
         format.json { render :show, status: :created, location: @imovel }
       else

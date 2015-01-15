@@ -1,4 +1,7 @@
 class Imovel < ActiveRecord::Base
+
+  has_many :fotos, :dependent => :destroy
+
   belongs_to :tipo
   belongs_to :cidade
   belongs_to :bairro
