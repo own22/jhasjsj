@@ -1,4 +1,4 @@
-<%= form_for(@imovel) do |f| %>
+<%= form_for @imovel, :html => { :multipart => true }  do |f| %>
   <% if @imovel.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@imovel.errors.count, "error") %> prohibited this imovel from being saved:</h2>
@@ -72,6 +72,12 @@
     <%= f.label :descricao_curta %><br>
     <%= f.text_area :descricao_curta %>
   </div>
+
+  <div class="field">
+    <%= f.label :fotos %>
+    <%= file_field_tag "images[]", type: :file, multiple: true %>  
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -65,5 +65,20 @@
   <%= @imovel.descricao_curta %>
 </p>
 
+<h2>Pictures</h2>
+<div>
+  <ul>
+    <% unless @imovel.fotos.empty? %>
+      <% @imovel.fotos.each do |pic| %>
+        <a href="<%= pic.image.url(:medium) %>">
+          <li>
+            <%= image_tag pic.image.url(:thumb) %>
+          </li>
+        </a>
+      <% end %>
+    <% end %>
+  </ul>
+</div>
+
 <%= link_to 'Edit', edit_imovel_path(@imovel) %> |
 <%= link_to 'Back', imovels_path %>
