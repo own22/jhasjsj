@@ -11,6 +11,9 @@
   <%= select_tag(:banheiros, options_for_select(options)) %>
   <%= select_tag(:vagas, options_for_select(options)) %>
 
+  <%= check_box_tag :venda %>
+  <%= check_box_tag :aluguel %>
+
   <label for="preco">Preço:</label>
   <%= number_field_tag :preco_min %>
   <%= number_field_tag :preco_max %>

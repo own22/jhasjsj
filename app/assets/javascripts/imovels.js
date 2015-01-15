@@ -39,7 +39,6 @@ $(document).ready(function() {
     max: 1000000,
     values: [50000, 700000],
     slide: function(event, ui) {
-      $('#amount').val("R$" + ui.values[0] + " - R$" + ui.values[1]);
       $('#preco_min').val(ui.values[0]);
       $('#preco_max').val(ui.values[1]);  
 

@@ -16,9 +16,12 @@ class Imovel < ActiveRecord::Base
     self.bairro_id = Bairro.find_or_create_by(nome: novo_bairro, cidade_id: self.cidade_id).id unless novo_bairro.blank?
   end
 
-  def self.pesquisa(cidade, bairro, tipo, banheiros, vagas, suites, quartos="", preco_min, preco_max)
+  def self.pesquisa(cidade, bairro, tipo, banheiros, vagas, suites, quartos="", preco_min, preco_max, venda, aluguel)
     if ( cidade || bairro || tipo || banheiros || vagas || suites || (quartos && quartos != "") || preco_min || preco_max )
+
       imovels = Imovel.all
+      imovels = imovels.where("venda = ?", false) if !(venda == "1")
+      imovels = imovels.where("aluguel = ?", false) if !(aluguel == "1")
       imovels = imovels.where("cidade_id = ?", cidade["id"]) unless cidade["id"].blank?
       imovels = imovels.where("bairro_id = ?", bairro["id"]) unless bairro["id"].blank?
       imovels = imovels.where("tipo_id = ?", tipo["id"]) unless tipo["id"].blank?
