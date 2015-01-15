@@ -16,12 +16,17 @@ class Imovel < ActiveRecord::Base
     self.bairro_id = Bairro.find_or_create_by(nome: novo_bairro, cidade_id: self.cidade_id).id unless novo_bairro.blank?
   end
 
-  def self.pesquisa(cidade, bairro, tipo)
-    if ( cidade || bairro || tipo )
+  def self.pesquisa(cidade, bairro, tipo, banheiros, vagas, suites, quartos="", preco_min, preco_max)
+    if ( cidade || bairro || tipo || banheiros || vagas || suites || (quartos && quartos != "") || preco_min || preco_max )
       imovels = Imovel.all
-      imovels = Imovel.where("cidade_id = ?", cidade["id"]) unless cidade["id"].blank?
-      imovels = Imovel.where("bairro_id = ?", bairro["id"]) unless bairro["id"].blank?
-      imovels = Imovel.where("tipo_id = ?", tipo["id"]) unless tipo["id"].blank?
+      imovels = imovels.where("cidade_id = ?", cidade["id"]) unless cidade["id"].blank?
+      imovels = imovels.where("bairro_id = ?", bairro["id"]) unless bairro["id"].blank?
+      imovels = imovels.where("tipo_id = ?", tipo["id"]) unless tipo["id"].blank?
+      imovels = imovels.where("quartos >= ?", quartos) if quartos.present?
+      imovels = imovels.where("banheiros >= ?", banheiros) if banheiros.present?
+      imovels = imovels.where("suites >= ?", suites) if suites.present?
+      imovels = imovels.where("preco >= ?", preco_min) if preco_min.present?
+      imovels = imovels.where("preco <= ?", preco_max) if preco_max.present?
       imovels 
     else
       Imovel.all

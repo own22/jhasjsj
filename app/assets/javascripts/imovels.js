@@ -31,3 +31,19 @@
     });
   });
 }).call(this);
+
+$(document).ready(function() {
+  $('#slider-range').slider({
+    range: true,
+    min: 10000,
+    max: 1000000,
+    values: [50000, 700000],
+    slide: function(event, ui) {
+      $('#amount').val("R$" + ui.values[0] + " - R$" + ui.values[1]);
+      $('#preco_min').val(ui.values[0]);
+      $('#preco_max').val(ui.values[1]);  
+
+    }  
+  });
+  $("#amount").val("R$" + $("#slider-range").slider("values", 0) + " - R$" + $("#slider-range").slider("values", 1));
+});
