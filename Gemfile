@@ -37,3 +37,4 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 gem 'jquery-ui-rails', '~> 5.0.3'
+gem 'paperclip'
