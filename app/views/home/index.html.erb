@@ -1,0 +1,17 @@
+<h1>Imoveis em destaque:</h1>
+
+<% @destaques.each do |imovel| %>
+  <ul>
+    <li><%= imovel.titulo %></li>
+    <li><%= imovel.descricao_curta %></li>
+    <li>
+      <% unless imovel.fotos.empty? %>
+        <% imovel.fotos.each do |pic| %>
+          <a href="<%= pic.image.url(:medium) %>">
+              <%= image_tag pic.image.url(:thumb) %>
+          </a>
+        <% end %>
+      <% end %>
+      </li>
+  </ul>
+<% end %>
