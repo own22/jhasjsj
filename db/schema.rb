@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150115203540) do
+ActiveRecord::Schema.define(version: 20150116061323) do
 
   create_table "bairros", force: true do |t|
     t.string   "nome"
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 20150115203540) do
     t.text     "descricao_curta"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "destaque"
   end
 
   add_index "imovels", ["bairro_id"], name: "index_imovels_on_bairro_id"

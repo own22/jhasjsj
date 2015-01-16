@@ -28,6 +28,7 @@
 <table>
   <thead>
     <tr>
+      <th>Destaque?</th>
       <th>Tipo</th>
       <th>Cidade</th>
       <th>Bairro</th>
@@ -48,6 +49,7 @@
   <tbody>
     <% @imovels.each do |imovel| %>
       <tr>
+        <td><%= form_for imovel do |f| %><%= f.check_box :destaque %><%= f.submit %><% end %>
         <td><%= imovel.tipo.nome unless imovel.tipo.nil? %></td>
         <td><%= imovel.cidade.nome unless imovel.cidade.nil? %></td>
         <td><%= imovel.bairro.nome unless imovel.bairro.nil? %></td>
