@@ -5,6 +5,7 @@ require 'rails/all'
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
+config.assets.paths << Rails.root.join('vendor', 'assets', 'components')
 
 module SuperSite
   class Application < Rails::Application
