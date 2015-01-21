@@ -1,3 +1,78 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "materialize/sass/materialize";
+
+body {
+  background-color: #FCFCFC; 
+}
+
+footer {
+  padding-top: 38px;
+
+  .links {
+    line-height: 2em;
+    
+    li {
+      border-radius: 5px 5px 5px 5px;
+      -moz-border-radius: 5px 5px 5px 5px;
+      -webkit-border-radius: 5px 5px 5px 5px;
+    }
+    
+    li:hover {
+      background-color: #00695c; 
+    }
+  }
+  
+  .social li {
+    display: inline-block;
+  }
+  .social-icons {
+    width: 3.1em;
+    height: 3.1em;
+    margin: 15px;
+  }
+
+  .social-icons:hover {
+    transform: scale(1.2,1.2);
+  }
+}
+
+#nav-logo {
+  text-align: center;
+  color: #fff;
+  font-weight: 400;
+  font-size: 1.3em;
+}
+
+//-------------- Media Queries -----------------// 
+
+@media #{$medium-and-up} {
+  .bottom-nav-menu {
+    margin-top: 120px;
+  }
+  nav li {
+    line-height: 60px;
+    border-radius: 5px 5px 0px 0px;
+    -moz-border-radius: 5px 5px 0px 0px;
+    -webkit-border-radius: 5px 5px 0px 0px;
+  }
+  #cat {
+    max-height: 180px;
+  }
+}
+
+@media #{$small-and-down} {
+  #cat {
+    max-height: 56px;
+  }
+  
+  footer {
+    text-align: center;
+    
+    a, p {
+      font-size: 1.2em;
+    }
+  }
+}
+  
