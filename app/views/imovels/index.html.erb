@@ -49,7 +49,7 @@
   <tbody>
     <% @imovels.each do |imovel| %>
       <tr>
-        <td><%= form_for imovel do |f| %><%= f.check_box :destaque %><%= f.submit %><% end %>
+        <td><%= form_for imovel do |f| %><%= f.check_box :destaque, class: "checkbox" %><%= f.submit %><% end %>
         <td><%= imovel.tipo.nome unless imovel.tipo.nil? %></td>
         <td><%= imovel.cidade.nome unless imovel.cidade.nil? %></td>
         <td><%= imovel.bairro.nome unless imovel.bairro.nil? %></td>
