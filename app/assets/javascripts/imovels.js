@@ -1,3 +1,4 @@
+/*
 
 (function() {
   jQuery(function() {
@@ -46,3 +47,4 @@ $(document).ready(function() {
   });
   $("#amount").val("R$" + $("#slider-range").slider("values", 0) + " - R$" + $("#slider-range").slider("values", 1));
 });
+*/

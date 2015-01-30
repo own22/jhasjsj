@@ -1,0 +1,13 @@
+<%= render "layouts/search" %>
+<a class="mostrar hide-on-med-and-up">Mostrar todos os imóveis</a>
+
+
+<h2 class="hide-on-small-only">Resultado da pesquisa:</h2>
+<a class="mostrar hide-on-small-only">Mostrar todos os imóveis</a>
+<h2 class="hide-on-med-and-up">Resultado:</h2>
+
+<div class="row">
+  <% @pesquisa.each do |imovel| %>
+    <%= render "layouts/thumb", :imovel => imovel %>
+  <% end %>
+</div>

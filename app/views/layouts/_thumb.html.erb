@@ -1,0 +1,16 @@
+<div class="col s12 m4 l3">
+  <div class="card-panel imovel">
+    <% unless imovel.fotos.empty? %>
+      <a><%= image_tag imovel.fotos.first.image.url(:thumb), class: "" %></a>
+    <% end %>
+    <h4><%= imovel.titulo %></h2>
+    <% unless imovel.cidade.nil? %>
+      <p class="cidade-nome"><%= imovel.cidade.nome %></p>
+    <% end %>
+    <div class="row center">
+      <div class="col s4"><%= inline_svg("sedan.svg",  class: "icons") %> <%= imovel.quartos %></div>
+      <div class="col s4"><%= inline_svg("bed.svg",  class: "icons") %> <%= imovel.quartos %></div>
+      <div class="col s4"><%= inline_svg("shower.svg",  class: "icons shower") %> <%= imovel.banheiros %></div>
+    </div>
+  </div>
+</div>  
