@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'home#index'
-  resources :imovels
+  resources :imovels, :path => "imovel"
   resources :pesquisas
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,4 +1,23 @@
+<div class="row">
+  <div class="card-panel col s12 l9 showImovel">
+    <div class="slider">
+      <ul class="slides">
+      
+        <% unless @imovel.fotos.empty? %>
+          <% @imovel.fotos.each do |pic| %>
+              <li>
+                <%= image_tag pic.image.url(:medium) %>
+              </li>
+          <% end %>
+        <% end %>
+
+      </ul>
+    </div>
+  </div>
+</div>
+
 <p id="notice"><%= notice %></p>
+
 
 <p>
   <strong>Tipo:</strong>

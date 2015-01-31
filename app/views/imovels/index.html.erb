@@ -1,28 +1,3 @@
-<h1>Pesquisa</h1>
-
-<%= form_tag imovels_path, :method => "get" do %>
-
-  <%= collection_select :cidade, :id, Cidade.order(:nome), :id, :nome, :prompt => "Escolha a cidade" %>
-  <%= grouped_collection_select :bairro, :id, Cidade.all.order(:nome), :bairros, :nome, :id, :nome, :prompt => "Escolha o bairro" %>
-  <%= collection_select :tipo, :id, Tipo.order(:nome), :id, :nome, :prompt => "Escolha o tipo de imóvel" %>
-
-  <% options = [["1", 1], ["2", 2], ["3", 3], ["4", 4], ["5+", 5]] %>
-  <%= select_tag(:quartos, options_for_select(options)) %>
-  <%= select_tag(:banheiros, options_for_select(options)) %>
-  <%= select_tag(:vagas, options_for_select(options)) %>
-
-  <%= check_box_tag :venda %>
-  <%= check_box_tag :aluguel %>
-
-  <label for="preco">Preço:</label>
-  <%= number_field_tag :preco_min %>
-  <%= number_field_tag :preco_max %>
-  <div id="slider-range"></div>
-
-  <%= submit_tag "Buscar", name: "" %>
-
-<% end %>
-
 <h1>Listing imovels</h1>
 
 <table>

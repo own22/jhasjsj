@@ -48,3 +48,7 @@ $(document).ready(function() {
   $("#amount").val("R$" + $("#slider-range").slider("values", 0) + " - R$" + $("#slider-range").slider("values", 1));
 });
 */
+
+$(document).ready(function(){
+      $('.slider').slider({full_width: true});
+});
