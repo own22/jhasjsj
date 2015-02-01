@@ -5,7 +5,6 @@
       indicators: true,
       height: 400,
       transition: 500,
-      interval: 6000
     }
     options = $.extend(defaults, options);
 
@@ -20,17 +19,13 @@
       var $active;
       if ($active_index != -1) { $active = $slides.eq($active_index); }
 
-      // Transitions the caption depending on alignment
-      function captionTransition(caption, duration) {
-        if (caption.hasClass("center-align")) {
-          caption.velocity({opacity: 0, translateY: -100}, {duration: duration, queue: false});
-        }
-        else if (caption.hasClass("right-align")) {
-          caption.velocity({opacity: 0, translateX: 100}, {duration: duration, queue: false});
-        }
-        else if (caption.hasClass("left-align")) {
-          caption.velocity({opacity: 0, translateX: -100}, {duration: duration, queue: false});
-        }
+      // Animate inline scroll move to current element
+      function animateMove (element) {
+        var offset = element.offsetLeft;
+
+          $('ul.indicators').stop().animate({
+              scrollLeft: offset - 255  
+          }, 300);
       }
 
       // This function will transition the slide to any index of the next slide
@@ -50,7 +45,6 @@
                             complete: function() {
                               $slides.not('.active').velocity({opacity: 0, translateX: 0, translateY: 0}, {duration: 0, queue: false});
                             } });
-          captionTransition($caption, options.transition);
 
 
           // Update indicators
@@ -76,11 +70,6 @@
         $slider.height(options.height);
       }
 
-      // Set initial positions of captions
-      $slides.find('.caption').each(function () {
-        captionTransition($(this), 0);
-      });
-
       // Set initial dimensions of images
       $slides.find('img').each(function () {
         $(this).load(function () {
@@ -94,7 +83,8 @@
       if (options.indicators) {
         var $indicators = $('<ul class="indicators"></ul>');
         $slides.each(function( index ) {
-          var $indicator = $('<li class="indicator-item"></li>');
+          $srcImg = $(this).children('img').attr('src').replace("medium", "thumb");
+          var $indicator = $('<li class="indicator-item"><img  class="responsive-img" src='+ $srcImg +'></li>');
 
           // Handle clicks on indicators
           $indicator.click(function () {
@@ -102,23 +92,38 @@
             var curr_index = $parent.find($(this)).index();
             moveToSlide(curr_index);
 
-            // reset interval
-            clearInterval($interval);
-            $interval = setInterval(
-              function(){
-                $active_index = $slider.find('.active').index();
-                if ($slides.length == $active_index + 1) $active_index = 0; // loop to start
-                else $active_index += 1;
-
-                moveToSlide($active_index);
-
-              }, options.transition + options.interval
-            );
+            animateMove(this);
           });
+
           $indicators.append($indicator);
         });
         $this.append($indicators);
         $indicators = $this.find('ul.indicators').find('li.indicator-item');
+
+        $('<div class="arrow arrow-left"></div>').insertBefore('ul.indicators');
+        $('<div class="arrow arrow-right"></div>').insertAfter('ul.indicators');
+
+          // Handle clicks on arrows
+          $('div.arrow-left').click(function () {
+
+            var $parent = $slider.parent();
+            var curr_index = $parent.find($('li.active')[0]).index() - 1;
+            moveToSlide(curr_index);
+
+            animateMove($('ul.indicators li.indicator-item.active')[0]);
+
+
+          });
+
+          $('div.arrow-right').click(function () {
+            var $parent = $slider.parent();
+            var curr_index = $parent.find($('li.active')[0]).index() + 1;
+            moveToSlide(curr_index);
+
+            animateMove($('ul.indicators li.indicator-item.active')[0]);
+          });
+
+
       }
 
       if ($active) {
@@ -142,15 +147,6 @@
         $active.find('.caption').velocity({opacity: 1, translateX: 0, translateY: 0}, {duration: options.transition, queue: false, easing: 'easeOutQuad'});
       });
 
-      // auto scroll
-      $interval = setInterval(
-        function(){
-          $active_index = $slider.find('.active').index();
-          moveToSlide($active_index + 1);
-
-        }, options.transition + options.interval
-      );
-
 
       // HammerJS, Swipe navigation
 
@@ -163,9 +159,6 @@
           prevent_default: false
       }).bind('pan', function(e) {
         if (e.gesture.pointerType === "touch") {
-
-          // reset interval
-          clearInterval($interval);
 
           var direction = e.gesture.direction;
           var x = e.gesture.deltaX;
@@ -235,18 +228,6 @@
           swipeLeft = false;
           swipeRight = false;
 
-          // Restart interval
-          clearInterval($interval);
-          $interval = setInterval(
-            function(){
-              $active_index = $slider.find('.active').index();
-              if ($slides.length == $active_index + 1) $active_index = 0; // loop to start
-              else $active_index += 1;
-
-              moveToSlide($active_index);
-
-            }, options.transition + options.interval
-          );
         }
       });
 

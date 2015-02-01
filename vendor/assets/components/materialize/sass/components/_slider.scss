@@ -57,31 +57,65 @@
     }
   }
 
-
   ul.indicators {
-    position: absolute;
-    text-align: center;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: 0;
+    // margin-left: 5%;
+    // margin-right: 5%;
+    position: relative;
+    // top: -80px;
+    display: inline-block;
+    text-align: left;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 82%;
 
     li.indicator-item {
+      padding: 0;
       display: inline-block;
       position: relative;
       cursor: pointer;
-      height: 16px;
-      width: 16px;
-      margin: 0 12px;
-      background-color: color('grey', 'lighten-2');
+      height: 74px;
+      width: 100px;
+      margin: 0 8px;
 
       @include transition(background-color .3s);
-      @include border-radius(50%);
 
       &.active {
-        background-color: color('green', 'base');
+        img {
+             opacity: 0.5;
+             filter: alpha(opacity=50);
+        }
       }
     }
+  }
+
+  .arrow{
+    position: relative;
+    display: inline-block;
+    top: -17px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .arrow-left{
+    margin-left: 2.8%;
+    background: url(arrow-left.svg) no-repeat;
+    background-size: 50px 74px;
+    width: 50px;
+    height: 74px;
+  }
+
+  .arrow-right{
+    background: url(arrow-right.svg) no-repeat;
+    background-size: 50px 74px;
+    width: 50px;
+    height: 74px;
+  }
+
+  .centrar {
+    margin-left: auto;
+    margin-right: auto;
   }
 
 }
