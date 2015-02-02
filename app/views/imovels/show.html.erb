@@ -1,108 +1,65 @@
 <div class="row">
-  <div class="card-panel col s12 l9 showImovel">
-    <div class="slider">
-      <ul class="slides">
-      
-        <% unless @imovel.fotos.empty? %>
-          <% @imovel.fotos.each do |pic| %>
-              <li>
-                <%= image_tag pic.image.url(:medium) %>
-              </li>
+  <div class="col s12 l9">
+    <div class="card-panel showImovel">
+    <div class="endereso">
+      <a href="/pesquisas?utf8=✓&cidade[id]=<%= @imovel.cidade.id %>&venda=1&aluguel=1"><%= @imovel.cidade.nome %> </a> > 
+      <a href="/pesquisas?utf8=✓&cidade[id]=<%= @imovel.cidade.id %>&bairro[id]=<%= @imovel.bairro.id %>&venda=1&aluguel=1"><%= @imovel.bairro.nome %></a>
+    </div>
+      <div class="slider">
+        <ul class="slides">
+        
+          <% unless @imovel.fotos.empty? %>
+            <% @imovel.fotos.each do |pic| %>
+                <li>
+                  <%= image_tag pic.image.url(:medium), :class => "responsive-img" %>
+                </li>
+            <% end %>
           <% end %>
-        <% end %>
+        </ul>
+      </div>
 
+      <ul class="infoList">
+        <li><%= inline_svg("bed.svg", class: "icone2" ) %><%= @imovel.quartos %> quartos <% unless @imovel.suites == 0 || @imovel.suites.nil? %>, sendo <%= @imovel.suites %> suites<% end %></li>
+        <li><%= inline_svg("shower.svg", class: "icone2") %><%= @imovel.banheiros %> banheiros <% unless @imovel.suites == 0 || @imovel.suites.nil? %>, sendo <%= @imovel.suites %> de suite<% end %></li>
+        <% unless @imovel.vagas == 0 || @imovel.vagas.nil? %>
+          <li><%= inline_svg("sedan.svg", class: "icone2") %><%= @imovel.vagas %> vagas de garagem</li>
+        <% end %>
       </ul>
+
+      <h2><%= @imovel.titulo %></h2>
+      <p><%= @imovel.descricao %></p>
+
+    </div>
+  </div>
+
+  <div class="col l3">
+  
+<ul class="tabs-wrapper section table-of-contents pin-top" style="top: 0px; margin-top: 285px;" data-origpos="407" data-origmargin="285">
+    <li><a href="#introduction" class="active">Introduction</a></li>
+    <li><a href="#initialization" class="">Initialization</a></li>
+    <li><a href="#options">Options</a></li>
+</ul>
+
+<!--   <div class="tabs-wrapper">
+  <h4>Mizu Imóvels</h4>
+    <ul>
+      <li><a href="tel:00000000">(00)000000</a></li>
+      <li><a href="tel:00000000">(00)000000</a></li>
+      <li>contato@mizuimovels.com.br</li>
+    </ul>
+  </div> -->
+
+    <div class="card-panel teal contatoForm">
+    <h3>Contato</h3>
+     <form class="centerForm">
+       <input type="text", placeholder="Digite seu email...">
+       <textarea rows="6" placeholder="Digite sua mensagem..."></textarea>
+       <div class="butao">
+         <button class="btn waves-effect waves-light" type="submit" name="action">Enviar
+            <i class="mdi-content-send right"></i>
+         </button>     
+       </div>
+     </form>
     </div>
   </div>
 </div>
-
-<p id="notice"><%= notice %></p>
-
-
-<p>
-  <strong>Tipo:</strong>
-  <%= @imovel.tipo %>
-</p>
-
-<p>
-  <strong>Cidade:</strong>
-  <%= @imovel.cidade %>
-</p>
-
-<p>
-  <strong>Bairro:</strong>
-  <%= @imovel.bairro %>
-</p>
-
-<p>
-  <strong>Venda:</strong>
-  <%= @imovel.venda %>
-</p>
-
-<p>
-  <strong>Aluguel:</strong>
-  <%= @imovel.aluguel %>
-</p>
-
-<p>
-  <strong>Destaque:</strong>
-  <%= @imovel.destaque %>
-</p>
-
-<p>
-  <strong>Quartos:</strong>
-  <%= @imovel.quartos %>
-</p>
-
-<p>
-  <strong>Banheiros:</strong>
-  <%= @imovel.banheiros %>
-</p>
-
-<p>
-  <strong>Suites:</strong>
-  <%= @imovel.suites %>
-</p>
-
-<p>
-  <strong>Vagas:</strong>
-  <%= @imovel.vagas %>
-</p>
-
-<p>
-  <strong>Preco:</strong>
-  <%= @imovel.preco %>
-</p>
-
-<p>
-  <strong>Titulo:</strong>
-  <%= @imovel.titulo %>
-</p>
-
-<p>
-  <strong>Descricao:</strong>
-  <%= @imovel.descricao %>
-</p>
-
-<p>
-  <strong>Descricao curta:</strong>
-  <%= @imovel.descricao_curta %>
-</p>
-
-<h2>Pictures</h2>
-<div>
-  <ul>
-    <% unless @imovel.fotos.empty? %>
-      <% @imovel.fotos.each do |pic| %>
-        <a href="<%= pic.image.url(:medium) %>">
-          <li>
-            <%= image_tag pic.image.url(:thumb) %>
-          </li>
-        </a>
-      <% end %>
-    <% end %>
-  </ul>
-</div>
-
-<%= link_to 'Edit', edit_imovel_path(@imovel) %> |
-<%= link_to 'Back', imovels_path %>
