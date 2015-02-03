@@ -50,8 +50,23 @@ $(document).ready(function() {
 */
 
 $(document).ready(function(){
-  $('.slider').slider({full_width: true});
+  var width = $(window).width()
+  // $('.slider').slider({full_width: true, height: 250});
 
-  $("#floatContato").sticky({topSpacing:400});
+  $("#floatContato").sticky({topSpacing:300});
+
+  if (width <= 600) {    
+    $(".showImovel").removeClass("card-panel");
+    $(".row").removeClass("row");
+    $(".container").removeClass("container");
+    $('.slider').slider({full_width: true, height: 250});
+  } else {
+    $('.slider').slider({full_width: true, height: 500});
+  }
+
+  if ( width >= 601 && width <= 992) {
+    $(".retangle").addClass("card-panel");
+  }
+
 }); 
 

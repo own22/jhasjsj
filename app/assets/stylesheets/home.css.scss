@@ -75,8 +75,9 @@ h3 {
   width: 90%;
 }
 .contatoForm {
+  position: relative;
   margin: 10px;
-  margin-top: 250px;
+  margin-top: 180px;
   input {
     @include centerForm;
     margin-bottom: 20px;
@@ -368,14 +369,29 @@ footer {
   }
 }
 
-@media #{$medium-and-down} {
+@media #{$medium-only} {
   .body {
     width: 100%;
     padding: 1rem;
   }
+
+  .retangle {
+    margin-top: 40px
+  }
+
+  .floatContato {
+    margin-top: 40px;
+  }
 }
 
-@media #{$small-and-down} {
+
+@media #{$medium-and-down} {
+
+
+
+  .contatoForm:before {
+    display: none;
+  }
   
   .body {
     padding-top: 0;
@@ -404,6 +420,7 @@ footer {
   
   h2 {
     text-align: center;
+    margin-top: 50px;
     margin-bottom: 10px;
   }
   
@@ -414,5 +431,83 @@ footer {
       font-size: 1.2em;
     }
   }
+
+  // Media Queries Show imovel //
+  .showImovel {
+    margin-top: 50px;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .endereso {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+  }
+
+  body {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
 }
   
+@media #{$small-and-down} {
+
+  .infoList {
+  width: 100%;
+  padding: 8px 0 8px 0;
+  margin: 15px 0 0 0;
+  line-height: 2em;
+  font-size: 1.15em;
+
+  li {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  .icone2 {
+    // color: #757575;
+    // fill: currentColor;
+    width: 2rem;
+    height: 2rem;
+    margin: 0;
+    padding: 0;
+    margin-right: 3px;
+    position: relative;
+    top: 10px;
+  }
+}
+
+  h2 {
+    color: #00bfa5;
+    margin-bottom: 30px;
+    margin-top: 40px;
+  }
+
+  p {
+    margin-left: 15px;
+    margin-right: 15px;
+    font-size: 1.2em;
+  }
+
+  // .endereso {
+  //   font-weight: 500;
+  // }
+
+  .showImovel {
+    margin-top: 25px;
+  }
+
+
+
+  .retangle {
+    margin: 70px 0 0 0;
+    padding-bottom: 40px;
+  }
+
+  footer {
+    margin-top: 0;
+  }
+}

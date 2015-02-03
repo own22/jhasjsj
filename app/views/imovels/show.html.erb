@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col s12 l9">
+  <div class="col l9">
     <div class="card-panel showImovel">
     <div class="endereso">
       <a href="/pesquisas?utf8=✓&cidade[id]=<%= @imovel.cidade.id %>&venda=1&aluguel=1"><%= @imovel.cidade.nome %> </a> > 
@@ -32,10 +32,7 @@
     </div>
   </div>
 
-  <div class="col l3">
-
-
-
+  <div class="col m8 l3">
 
     <div class="retangle teal lighten-1 contatoForm">
     <h3>Contato</h3>
@@ -51,7 +48,7 @@
      </form>
     </div>
 
-    <div id="floatContato">
+    <div id="floatContato" class="floatContato hide-on-med-and-down">
       <h4>Mizu Imóvels</h4>
         <ul>
           <li>contato@mizuimovels.com.br</li>
@@ -61,4 +58,14 @@
     </div>
 
   </div>
+
+  <div class="col m4 floatContato hide-on-large-only hide-on-small-only">
+      <h4>Mizu Imóvels</h4>
+        <ul>
+          <li>contato@mizuimovels.com.br</li>
+          <li><a href="tel:00000000">(00)000-000</a></li>
+          <li><a href="tel:00000000">(00)000-000</a></li>
+        </ul>
+  </div>
+
 </div>

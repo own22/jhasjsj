@@ -84,7 +84,12 @@
         var $indicators = $('<ul class="indicators"></ul>');
         $slides.each(function( index ) {
           $srcImg = $(this).children('img').attr('src').replace("medium", "thumb");
+         
+        if ($(window).width() <= 600) {
+          var $indicator = $('<li class="indicator-item"></li>');
+        } else {
           var $indicator = $('<li class="indicator-item"><img  class="responsive-img" src='+ $srcImg +'></li>');
+        }
 
           // Handle clicks on indicators
           $indicator.click(function () {
@@ -100,8 +105,10 @@
         $this.append($indicators);
         $indicators = $this.find('ul.indicators').find('li.indicator-item');
 
-        $('<div class="arrow arrow-left"></div>').insertBefore('ul.indicators');
-        $('<div class="arrow arrow-right"></div>').insertAfter('ul.indicators');
+        if (!($(window).width() <= 600)) {
+          $('<div class="arrow arrow-left"></div>').insertBefore('ul.indicators');
+          $('<div class="arrow arrow-right"></div>').insertAfter('ul.indicators');
+        }
 
           // Handle clicks on arrows
           $('div.arrow-left').click(function () {
