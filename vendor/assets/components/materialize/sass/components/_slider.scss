@@ -38,7 +38,7 @@
       height: inherit;
       overflow: hidden;
 
-      img { height: 100%; }
+      img { max-height: 100%; }
 
       .caption {
         color: #fff;
