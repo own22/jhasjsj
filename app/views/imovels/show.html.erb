@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col l9">
+  <div class="col m12 l9">
     <div class="card-panel showImovel">
     <div class="endereso">
       <a href="/pesquisas?utf8=✓&cidade[id]=<%= @imovel.cidade.id %>&venda=1&aluguel=1"><%= @imovel.cidade.nome %> </a> > 
@@ -19,7 +19,7 @@
       </div>
 
       <ul class="infoList">
-        <li><%= inline_svg("bed.svg", class: "icone2" ) %><%= @imovel.quartos %> quartos <% unless @imovel.suites == 0 || @imovel.suites.nil? %>, sendo <%= @imovel.suites %> suites<% end %></li>
+        <li><%= inline_svg("bed.svg", class: "icone2" ) %><%= @imovel.quartos %> quartos <% unless @imovel.suites == 0 || @imovel.suites.nil? %>, sendo <%= @imovel.suites %> suite<% end %></li>
         <li><%= inline_svg("shower.svg", class: "icone2") %><%= @imovel.banheiros %> banheiros <% unless @imovel.suites == 0 || @imovel.suites.nil? %>, sendo <%= @imovel.suites %> de suite<% end %></li>
         <% unless @imovel.vagas == 0 || @imovel.vagas.nil? %>
           <li><%= inline_svg("sedan.svg", class: "icone2") %><%= @imovel.vagas %> vagas de garagem</li>
@@ -69,3 +69,5 @@
   </div>
 
 </div>
+
+<%= javascript_include_tag "imovels" %>

@@ -453,6 +453,16 @@ footer {
 }
   
 @media #{$small-and-down} {
+  .formuPesqui {
+  form {
+    margin-left: 5%;
+    margin-right: 5%;
+
+    .checkbox {
+      margin-bottom: 15px;
+    }
+  }
+}
 
   .infoList {
   width: 100%;

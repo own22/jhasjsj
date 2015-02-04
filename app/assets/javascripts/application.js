@@ -13,5 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+//= require fotos
+//= require home
+//= require pesquisas
 //= require_tree ../../../vendor/assets/components/materialize/js

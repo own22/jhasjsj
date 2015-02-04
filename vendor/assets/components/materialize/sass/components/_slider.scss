@@ -67,12 +67,14 @@
   }
 
   ul.indicators {
-      // margin-left: 5%;
-      // margin-right: 5%;
+      margin-left: 0;
+      margin-right: 0;
+      margin-top: 25px;
       position: relative;
       // top: -80px;
       display: inline-block;
       text-align: left;
+      width: 85%;
       overflow: hidden;
       white-space: nowrap;
 
@@ -105,7 +107,12 @@
       user-select: none;
       position: relative;
       display: inline-block;
-      top: -17px;
+      top: 25px;
+      // position: absolute;
+      // width: 5%;
+      // background: #fff;
+      // z-index: 2;
+      // top: -5px;
 
       &:hover {
         cursor: pointer;

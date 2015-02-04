@@ -3,8 +3,18 @@ class Pesquisa < ActiveRecord::Base
     if ( cidade || bairro || tipo || banheiros || vagas || suites || (quartos && quartos != "") || preco_min || preco_max )
 
       imovels = Imovel.all
-      imovels = imovels.where("venda = ?", false) if !(venda == "1")
-      imovels = imovels.where("aluguel = ?", false) if !(aluguel == "1")
+      aluguel = (aluguel == "1")
+      venda = (venda == "1")
+
+      unless (aluguel && venda)
+        if aluguel
+          imovels = imovels.where("aluguel = ?", aluguel) 
+        end
+        if venda
+          imovels = imovels.where("venda = ?", venda)
+        end
+      end
+
       
       if !(cidade.nil?)
         imovels = imovels.where("cidade_id = ?", cidade["id"]) unless cidade["id"].blank?

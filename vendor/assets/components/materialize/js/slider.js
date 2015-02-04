@@ -81,7 +81,7 @@
 
       // dynamically add indicators
       if (options.indicators) {
-        var $indicators = $('<ul class="indicators"></ul>');
+        var $indicators = $('<ul class="indicators col l10 center"></ul>');
         $slides.each(function( index ) {
           $srcImg = $(this).children('img').attr('src').replace("medium", "thumb");
          
@@ -106,8 +106,8 @@
         $indicators = $this.find('ul.indicators').find('li.indicator-item');
 
         if (!($(window).width() <= 600)) {
-          $('<div class="arrow arrow-left"></div>').insertBefore('ul.indicators');
-          $('<div class="arrow arrow-right"></div>').insertAfter('ul.indicators');
+          $('<div class="arrow arrow-left col l1"></div>').insertBefore('ul.indicators');
+          $('<div class="arrow arrow-right col l1"></div>').insertAfter('ul.indicators');
         }
 
           // Handle clicks on arrows
