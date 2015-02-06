@@ -453,6 +453,12 @@ footer {
 }
   
 @media #{$small-and-down} {
+.links li {
+  line-height: 3em;
+  margin-bottom: 5px;
+  margin-bottom: 5px;
+}
+
   .formuPesqui {
   form {
     margin-left: 5%;

@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'home#index'
   resources :imovels, :path => "imovel"
   resources :pesquisas, :path => "imoveis"
+  get ':action' => 'static#:action'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

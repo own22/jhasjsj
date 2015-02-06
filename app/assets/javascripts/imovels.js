@@ -58,7 +58,7 @@ $(document).ready(function(){
   if (width <= 600) {    
     $(".showImovel").removeClass("card-panel");
     $(".row").removeClass("row");
-    $(".container").removeClass("container");
+    $(".body.container").removeClass("container");
     $('.slider').slider({full_width: true, height: 250});
   } else {
     $('.slider').slider({full_width: true, height: 500});
