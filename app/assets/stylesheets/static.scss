@@ -1,3 +1,70 @@
 // Place all the styles related to the static controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.contatopage {
+
+	h2 {
+		border-bottom: solid;
+		border-width: 40%;
+		border-color: #26a69a;
+		color: #009688;
+	}
+
+	p {
+		margin-top: 10px;
+		font-size: 1.2em;
+
+	}
+
+ a {
+		font-size: 1.4em;
+		font-weight: 300px;
+		font-style: italic;
+
+	}
+
+	h5 {
+		color: #fff;
+		text-weight: 600;
+		margin-bottom: 20px;
+	}
+
+  .icone2 {
+    // color: #757575;
+    // fill: currentColor;
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    margin: 0;
+    padding: 0;
+    margin-right: 3px;
+    position: relative;
+    top: 10px;
+  }
+
+  form {
+  	padding: 10px;
+  	padding-bottom: 0;
+  }
+
+  input {
+  	height: 40px;
+  	width: 100%;
+  	margin: 0;
+  	margin-bottom: 20px;
+  }
+
+  textarea {
+     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+     box-sizing: border-box;         /* Opera/IE 8+ */
+		width: 100%;
+  	margin: 0;
+  	padding: 0;
+  }
+
+}
+
+.message-form {
+	margin-top: 70px;
+}

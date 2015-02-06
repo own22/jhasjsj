@@ -2,29 +2,29 @@
 <%= form_tag pesquisas_path, :method => "get" do %>
   
 
-  <div class="col s12 l3">
+  <div class="col s12 m6 l3">
     <label class="hide-on-small-only">Cidade:</label>
       <%= collection_select :cidade, :id, Cidade.order(:nome), :id, :nome, :include_blank => "--- Cidade ---" , :selected => @cidade_select %>
   </div>
   
-  <div class="col s12 l4">
+  <div class="col s12 m6 l4">
       <label class="hide-on-small-only">Bairro:</label>
       <%= grouped_collection_select :bairro, :id, Cidade.all.order(:nome), :bairros, :nome, :id, :nome, :include_blank => "--- Bairro ---", :selected => @bairro_select %>
   </div>    
   
-  <div class="col s12 l3">
+  <div class="col s12 m6 l3">
       <label class="hide-on-small-only">Tipo de imóvel:</label>
       <%= collection_select :tipo, :id, Tipo.order(:nome), :id, :nome, :include_blank => "--- Tipo ---", :selected => @tipo_select %>
   </div>
   
-  <div class="col s6 l1">
+  <div class="col s6 m3 l1">
     <div class="checkbox">
       <label style="margin-bottom: 15px;">Venda</label>
       <%= check_box_tag :venda, "1", params.has_key?(:venda) %>
     </div>
   </div>  
   
-  <div class="col s6 l1">
+  <div class="col s6 m3 l1">
     <div class="checkbox">
       <label style="margin-bottom: 15px;">Aluguel</label>
       <%= check_box_tag :aluguel, "1", params.has_key?(:aluguel) %>
@@ -35,16 +35,16 @@
   <% optionsB = [["-- Banheiros --", ''], ["1", 1], ["2", 2], ["3", 3], ["4", 4], ["5+", 5]] %>
   <% optionsV = [["-- Vagas --", ''], ["1", 1], ["2", 2], ["3", 3], ["4", 4], ["5+", 5]] %>
   
-   <div class="col s6 l3">
+   <div class="col s6 m4 l3">
      <label class="hide-on-small-only">Quartos:</label>
     <%= select_tag(:quartos, options_for_select(optionsQ, :selected => params[:quartos])) %>
   </div>
-  <div class="col s6 l3">
+  <div class="col s6 m4 l3">
     <label  class="hide-on-small-only">Banheiros:</label>
     <%= select_tag(:banheiros, options_for_select(optionsB, :selected => params[:banheiros])) %>
   </div>
   
-  <div class="col s12 l3">
+  <div class="col s12 m4 l3">
   <label  class="hide-on-small-only">Vagas de garagem:</label>
   <%= select_tag(:vagas, options_for_select(optionsV, :selected => params[:vagas])) %>
   </div>

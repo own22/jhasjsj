@@ -4,6 +4,16 @@
 @import "materialize/sass/materialize";
 @import "compass";
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover 
+{
+     text-decoration:none; 
+}
+
 .hide {
   display: none;
 }
@@ -382,11 +392,23 @@ footer {
   .floatContato {
     margin-top: 40px;
   }
+
+  .checkbox {
+    margin-bottom: 40px;
+    margin-top: 35px;
+  }
 }
 
 
 @media #{$medium-and-down} {
-
+  .links li {
+    line-height: 3em;
+    margin-bottom: 5px;
+    margin-bottom: 5px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
 
   .contatoForm:before {
@@ -453,11 +475,9 @@ footer {
 }
   
 @media #{$small-and-down} {
-.links li {
-  line-height: 3em;
-  margin-bottom: 5px;
-  margin-bottom: 5px;
-}
+  .links li {
+    width: 95%;
+  }
 
   .formuPesqui {
   form {
