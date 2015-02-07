@@ -11,9 +11,10 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
-//= require turbolinks
 //= require fotos
 //= require home
 //= require pesquisas
 //= require_tree ../../../vendor/assets/components/materialize/js
+//= require turbolinks

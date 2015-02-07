@@ -46,3 +46,4 @@ gem 'spring',        group: :development
 gem 'paperclip'
 gem 'inline_svg'
 gem 'compass-rails'
+gem 'jquery-turbolinks'

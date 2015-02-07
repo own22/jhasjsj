@@ -1,73 +1,75 @@
-<div class="row">
-  <div class="col m12 l9">
-    <div class="card-panel showImovel">
-    <div class="endereso">
-      <a href="/pesquisas?utf8=✓&cidade[id]=<%= @imovel.cidade.id %>&venda=1&aluguel=1"><%= @imovel.cidade.nome %> </a> > 
-      <a href="/pesquisas?utf8=✓&cidade[id]=<%= @imovel.cidade.id %>&bairro[id]=<%= @imovel.bairro.id %>&venda=1&aluguel=1"><%= @imovel.bairro.nome %></a>
-    </div>
-      <div class="slider">
-        <ul class="slides">
-        
-          <% unless @imovel.fotos.empty? %>
-            <% @imovel.fotos.each do |pic| %>
-                <li>
-                  <%= image_tag pic.image.url(:medium), :class => "responsive-img" %>
-                </li>
+<div class="container body">
+  <div class="row showRow">
+    <div class="col m12 l9">
+      <div class="card-panel showImovel">
+      <div class="endereso">
+        <a href="/pesquisas?utf8=✓&cidade[id]=<%= @imovel.cidade.id %>&venda=1&aluguel=1"><%= @imovel.cidade.nome %> </a> > 
+        <a href="/pesquisas?utf8=✓&cidade[id]=<%= @imovel.cidade.id %>&bairro[id]=<%= @imovel.bairro.id %>&venda=1&aluguel=1"><%= @imovel.bairro.nome %></a>
+      </div>
+        <div class="slider">
+          <ul class="slides">
+          
+            <% unless @imovel.fotos.empty? %>
+              <% @imovel.fotos.each do |pic| %>
+                  <li>
+                    <%= image_tag pic.image.url(:medium), :class => "responsive-img" %>
+                  </li>
+              <% end %>
             <% end %>
+          </ul>
+        </div>
+
+        <ul class="infoList">
+          <li><%= inline_svg("bed.svg", class: "icone2" ) %><%= @imovel.quartos %> quartos <% unless @imovel.suites == 0 || @imovel.suites.nil? %>, sendo <%= @imovel.suites %> suite<% end %></li>
+          <li><%= inline_svg("shower.svg", class: "icone2") %><%= @imovel.banheiros %> banheiros <% unless @imovel.suites == 0 || @imovel.suites.nil? %>, sendo <%= @imovel.suites %> de suite<% end %></li>
+          <% unless @imovel.vagas == 0 || @imovel.vagas.nil? %>
+            <li><%= inline_svg("sedan.svg", class: "icone2") %><%= @imovel.vagas %> vagas de garagem</li>
           <% end %>
         </ul>
+
+        <h2><%= @imovel.titulo %></h2>
+        <p><%= @imovel.descricao %></p>
+
+      </div>
+    </div>
+
+    <div class="col m8 l3">
+
+      <div class="retangle teal lighten-1 contatoForm">
+      <h3>Contato</h3>
+       <form class="centerForm">
+         <input type="text", placeholder="Digite seu nome...">
+         <input type="text", placeholder="Digite seu email...">
+         <textarea rows="6" placeholder="Deixe sua mensagem..."></textarea>
+         <div class="butao">
+           <button class="btn waves-effect waves-light teal darken-1" type="submit" name="action">Enviar
+              <i class="mdi-content-send right"></i>
+           </button>     
+         </div>
+       </form>
       </div>
 
-      <ul class="infoList">
-        <li><%= inline_svg("bed.svg", class: "icone2" ) %><%= @imovel.quartos %> quartos <% unless @imovel.suites == 0 || @imovel.suites.nil? %>, sendo <%= @imovel.suites %> suite<% end %></li>
-        <li><%= inline_svg("shower.svg", class: "icone2") %><%= @imovel.banheiros %> banheiros <% unless @imovel.suites == 0 || @imovel.suites.nil? %>, sendo <%= @imovel.suites %> de suite<% end %></li>
-        <% unless @imovel.vagas == 0 || @imovel.vagas.nil? %>
-          <li><%= inline_svg("sedan.svg", class: "icone2") %><%= @imovel.vagas %> vagas de garagem</li>
-        <% end %>
-      </ul>
-
-      <h2><%= @imovel.titulo %></h2>
-      <p><%= @imovel.descricao %></p>
+      <div id="floatContato" class="floatContato hide-on-med-and-down">
+        <h4>Mizu Imóvels</h4>
+          <ul>
+            <li>contato@mizuimovels.com.br</li>
+            <li><a href="tel:00000000">(00)000-000</a></li>
+            <li><a href="tel:00000000">(00)000-000</a></li>
+          </ul>
+      </div>
 
     </div>
-  </div>
 
-  <div class="col m8 l3">
-
-    <div class="retangle teal lighten-1 contatoForm">
-    <h3>Contato</h3>
-     <form class="centerForm">
-       <input type="text", placeholder="Digite seu nome...">
-       <input type="text", placeholder="Digite seu email...">
-       <textarea rows="6" placeholder="Deixe sua mensagem..."></textarea>
-       <div class="butao">
-         <button class="btn waves-effect waves-light teal darken-1" type="submit" name="action">Enviar
-            <i class="mdi-content-send right"></i>
-         </button>     
-       </div>
-     </form>
-    </div>
-
-    <div id="floatContato" class="floatContato hide-on-med-and-down">
-      <h4>Mizu Imóvels</h4>
-        <ul>
-          <li>contato@mizuimovels.com.br</li>
-          <li><a href="tel:00000000">(00)000-000</a></li>
-          <li><a href="tel:00000000">(00)000-000</a></li>
-        </ul>
+    <div class="col m4 floatContato hide-on-large-only hide-on-small-only">
+        <h4>Mizu Imóvels</h4>
+          <ul>
+            <li>contato@mizuimovels.com.br</li>
+            <li><a href="tel:00000000">(00)000-000</a></li>
+            <li><a href="tel:00000000">(00)000-000</a></li>
+          </ul>
     </div>
 
   </div>
-
-  <div class="col m4 floatContato hide-on-large-only hide-on-small-only">
-      <h4>Mizu Imóvels</h4>
-        <ul>
-          <li>contato@mizuimovels.com.br</li>
-          <li><a href="tel:00000000">(00)000-000</a></li>
-          <li><a href="tel:00000000">(00)000-000</a></li>
-        </ul>
-  </div>
-
 </div>
 
 <%= javascript_include_tag "imovels" %>
