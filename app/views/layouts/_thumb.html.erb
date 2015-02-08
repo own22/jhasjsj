@@ -2,7 +2,7 @@
   <div class="card-panel imovel">
     <%= link_to "", imovel, :class => "imovel_link" %>
     <% unless imovel.fotos.empty? %>
-      <a><%= image_tag imovel.fotos.first.image.url(:thumb), class: "" %></a>
+      <a><%= image_tag(imovel.fotos.first.image.url(:thumb), class: "") %></a>
     <% end %>
     <h4><%= imovel.titulo %></h2>
     <% unless imovel.cidade.nil? %>
