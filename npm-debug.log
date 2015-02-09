@@ -1,0 +1,173 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/bin/npm', 'install', '-g', 'brb' ]
+2 info using npm@1.3.6
+3 info using node@v0.10.33
+4 verbose cache add [ 'brb', null ]
+5 verbose cache add name=undefined spec="brb" args=["brb",null]
+6 verbose parsed url { protocol: null,
+6 verbose parsed url   slashes: null,
+6 verbose parsed url   auth: null,
+6 verbose parsed url   host: null,
+6 verbose parsed url   port: null,
+6 verbose parsed url   hostname: null,
+6 verbose parsed url   hash: null,
+6 verbose parsed url   search: null,
+6 verbose parsed url   query: null,
+6 verbose parsed url   pathname: 'brb',
+6 verbose parsed url   path: 'brb',
+6 verbose parsed url   href: 'brb' }
+7 silly lockFile f55438a1-brb brb
+8 verbose lock brb /home/fedo20/.npm/f55438a1-brb.lock
+9 silly lockFile f55438a1-brb brb
+10 silly lockFile f55438a1-brb brb
+11 verbose addNamed [ 'brb', '' ]
+12 verbose addNamed [ null, '*' ]
+13 silly lockFile c7168c72-brb brb@
+14 verbose lock brb@ /home/fedo20/.npm/c7168c72-brb.lock
+15 silly addNameRange { name: 'brb', range: '*', hasData: false }
+16 verbose url raw brb
+17 verbose url resolving [ 'https://registry.npmjs.org/', './brb' ]
+18 verbose url resolved https://registry.npmjs.org/brb
+19 info trying registry request attempt 1 at 02:13:00
+20 http GET https://registry.npmjs.org/brb
+21 http 200 https://registry.npmjs.org/brb
+22 silly registry.get cb [ 200,
+22 silly registry.get   { date: 'Mon, 09 Feb 2015 05:13:01 GMT',
+22 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+22 silly registry.get     etag: '"5HCE2QG4FFAUYHENEMIRTQ7KS"',
+22 silly registry.get     'content-type': 'application/json',
+22 silly registry.get     'cache-control': 'max-age=60',
+22 silly registry.get     'content-length': '5237',
+22 silly registry.get     'accept-ranges': 'bytes',
+22 silly registry.get     via: '1.1 varnish',
+22 silly registry.get     age: '0',
+22 silly registry.get     'x-served-by': 'cache-atl6222-ATL',
+22 silly registry.get     'x-cache': 'MISS',
+22 silly registry.get     'x-cache-hits': '0',
+22 silly registry.get     'x-timer': 'S1423458781.050506,VS0,VE26',
+22 silly registry.get     vary: 'Accept',
+22 silly registry.get     'keep-alive': 'timeout=10, max=50',
+22 silly registry.get     connection: 'Keep-Alive' } ]
+23 silly addNameRange number 2 { name: 'brb', range: '*', hasData: true }
+24 silly addNameRange versions [ 'brb', [ '0.0.1', '0.0.2', '1.0.0', '1.0.1' ] ]
+25 verbose addNamed [ 'brb', '1.0.1' ]
+26 verbose addNamed [ '1.0.1', '1.0.1' ]
+27 silly lockFile e6f45a3c-brb-1-0-1 brb@1.0.1
+28 verbose lock brb@1.0.1 /home/fedo20/.npm/e6f45a3c-brb-1-0-1.lock
+29 silly lockFile 5cc1cb75-stry-npmjs-org-brb-brb-1-0-1-tgz https://registry.npmjs.org/brb/-/brb-1.0.1.tgz
+30 verbose lock https://registry.npmjs.org/brb/-/brb-1.0.1.tgz /home/fedo20/.npm/5cc1cb75-stry-npmjs-org-brb-brb-1-0-1-tgz.lock
+31 verbose addRemoteTarball [ 'https://registry.npmjs.org/brb/-/brb-1.0.1.tgz',
+31 verbose addRemoteTarball   '546ca0eeb3ca937c12a65d16a4dbf10089740ed7' ]
+32 info retry fetch attempt 1 at 02:13:01
+33 verbose fetch to= /home/fedo20/tmp/npm-9493-AEolyuk6/1423458781204-0.18363265320658684/tmp.tgz
+34 http GET https://registry.npmjs.org/brb/-/brb-1.0.1.tgz
+35 http 200 https://registry.npmjs.org/brb/-/brb-1.0.1.tgz
+36 verbose tar unpack /home/fedo20/tmp/npm-9493-AEolyuk6/1423458781204-0.18363265320658684/tmp.tgz
+37 silly lockFile c1afe528-1204-0-18363265320658684-package tar:///home/fedo20/tmp/npm-9493-AEolyuk6/1423458781204-0.18363265320658684/package
+38 verbose lock tar:///home/fedo20/tmp/npm-9493-AEolyuk6/1423458781204-0.18363265320658684/package /home/fedo20/.npm/c1afe528-1204-0-18363265320658684-package.lock
+39 silly lockFile d9961b9a-1204-0-18363265320658684-tmp-tgz tar:///home/fedo20/tmp/npm-9493-AEolyuk6/1423458781204-0.18363265320658684/tmp.tgz
+40 verbose lock tar:///home/fedo20/tmp/npm-9493-AEolyuk6/1423458781204-0.18363265320658684/tmp.tgz /home/fedo20/.npm/d9961b9a-1204-0-18363265320658684-tmp-tgz.lock
+41 silly gunzTarPerm modes [ '755', '644' ]
+42 silly gunzTarPerm extractEntry package.json
+43 silly gunzTarPerm extractEntry .npmignore
+44 silly gunzTarPerm extractEntry README.md
+45 silly gunzTarPerm extractEntry LICENSE
+46 silly gunzTarPerm extractEntry bin/brb
+47 silly lockFile c1afe528-1204-0-18363265320658684-package tar:///home/fedo20/tmp/npm-9493-AEolyuk6/1423458781204-0.18363265320658684/package
+48 silly lockFile c1afe528-1204-0-18363265320658684-package tar:///home/fedo20/tmp/npm-9493-AEolyuk6/1423458781204-0.18363265320658684/package
+49 silly lockFile d9961b9a-1204-0-18363265320658684-tmp-tgz tar:///home/fedo20/tmp/npm-9493-AEolyuk6/1423458781204-0.18363265320658684/tmp.tgz
+50 silly lockFile d9961b9a-1204-0-18363265320658684-tmp-tgz tar:///home/fedo20/tmp/npm-9493-AEolyuk6/1423458781204-0.18363265320658684/tmp.tgz
+51 verbose tar pack [ '/home/fedo20/.npm/brb/1.0.1/package.tgz',
+51 verbose tar pack   '/home/fedo20/tmp/npm-9493-AEolyuk6/1423458781204-0.18363265320658684/package' ]
+52 verbose tarball /home/fedo20/.npm/brb/1.0.1/package.tgz
+53 verbose folder /home/fedo20/tmp/npm-9493-AEolyuk6/1423458781204-0.18363265320658684/package
+54 silly lockFile c1afe528-1204-0-18363265320658684-package tar:///home/fedo20/tmp/npm-9493-AEolyuk6/1423458781204-0.18363265320658684/package
+55 verbose lock tar:///home/fedo20/tmp/npm-9493-AEolyuk6/1423458781204-0.18363265320658684/package /home/fedo20/.npm/c1afe528-1204-0-18363265320658684-package.lock
+56 silly lockFile 72e98b90-fedo20-npm-brb-1-0-1-package-tgz tar:///home/fedo20/.npm/brb/1.0.1/package.tgz
+57 verbose lock tar:///home/fedo20/.npm/brb/1.0.1/package.tgz /home/fedo20/.npm/72e98b90-fedo20-npm-brb-1-0-1-package-tgz.lock
+58 silly lockFile c1afe528-1204-0-18363265320658684-package tar:///home/fedo20/tmp/npm-9493-AEolyuk6/1423458781204-0.18363265320658684/package
+59 silly lockFile c1afe528-1204-0-18363265320658684-package tar:///home/fedo20/tmp/npm-9493-AEolyuk6/1423458781204-0.18363265320658684/package
+60 silly lockFile 72e98b90-fedo20-npm-brb-1-0-1-package-tgz tar:///home/fedo20/.npm/brb/1.0.1/package.tgz
+61 silly lockFile 72e98b90-fedo20-npm-brb-1-0-1-package-tgz tar:///home/fedo20/.npm/brb/1.0.1/package.tgz
+62 silly lockFile 550f94c0-ome-fedo20-npm-brb-1-0-1-package /home/fedo20/.npm/brb/1.0.1/package
+63 verbose lock /home/fedo20/.npm/brb/1.0.1/package /home/fedo20/.npm/550f94c0-ome-fedo20-npm-brb-1-0-1-package.lock
+64 silly lockFile 550f94c0-ome-fedo20-npm-brb-1-0-1-package /home/fedo20/.npm/brb/1.0.1/package
+65 silly lockFile 550f94c0-ome-fedo20-npm-brb-1-0-1-package /home/fedo20/.npm/brb/1.0.1/package
+66 verbose tar unpack /home/fedo20/.npm/brb/1.0.1/package.tgz
+67 silly lockFile d059b25e-ome-fedo20-npm-brb-1-0-1-package tar:///home/fedo20/.npm/brb/1.0.1/package
+68 verbose lock tar:///home/fedo20/.npm/brb/1.0.1/package /home/fedo20/.npm/d059b25e-ome-fedo20-npm-brb-1-0-1-package.lock
+69 silly lockFile 72e98b90-fedo20-npm-brb-1-0-1-package-tgz tar:///home/fedo20/.npm/brb/1.0.1/package.tgz
+70 verbose lock tar:///home/fedo20/.npm/brb/1.0.1/package.tgz /home/fedo20/.npm/72e98b90-fedo20-npm-brb-1-0-1-package-tgz.lock
+71 silly gunzTarPerm modes [ '755', '644' ]
+72 silly gunzTarPerm extractEntry package.json
+73 silly gunzTarPerm extractEntry .npmignore
+74 silly gunzTarPerm extractEntry README.md
+75 silly gunzTarPerm extractEntry LICENSE
+76 silly gunzTarPerm extractEntry bin/brb
+77 silly lockFile d059b25e-ome-fedo20-npm-brb-1-0-1-package tar:///home/fedo20/.npm/brb/1.0.1/package
+78 silly lockFile d059b25e-ome-fedo20-npm-brb-1-0-1-package tar:///home/fedo20/.npm/brb/1.0.1/package
+79 silly lockFile 72e98b90-fedo20-npm-brb-1-0-1-package-tgz tar:///home/fedo20/.npm/brb/1.0.1/package.tgz
+80 silly lockFile 72e98b90-fedo20-npm-brb-1-0-1-package-tgz tar:///home/fedo20/.npm/brb/1.0.1/package.tgz
+81 verbose chmod /home/fedo20/.npm/brb/1.0.1/package.tgz 644
+82 verbose chown /home/fedo20/.npm/brb/1.0.1/package.tgz [ 1000, 1000 ]
+83 silly lockFile 5cc1cb75-stry-npmjs-org-brb-brb-1-0-1-tgz https://registry.npmjs.org/brb/-/brb-1.0.1.tgz
+84 silly lockFile 5cc1cb75-stry-npmjs-org-brb-brb-1-0-1-tgz https://registry.npmjs.org/brb/-/brb-1.0.1.tgz
+85 silly lockFile e6f45a3c-brb-1-0-1 brb@1.0.1
+86 silly lockFile e6f45a3c-brb-1-0-1 brb@1.0.1
+87 silly lockFile c7168c72-brb brb@
+88 silly lockFile c7168c72-brb brb@
+89 silly resolved [ { name: 'brb',
+89 silly resolved     preferGlobal: 'true',
+89 silly resolved     description: 'A simple CLI tool for notifying when a terminal task is done.',
+89 silly resolved     version: '1.0.1',
+89 silly resolved     author: { name: 'Viktor Fröberg', email: 'vikfroberg@gmail.com' },
+89 silly resolved     repository: { type: 'git', url: 'http://github.com/vikfroberg/brb.git' },
+89 silly resolved     keywords: [ 'cli', 'tools' ],
+89 silly resolved     dependencies: { 'node-notifier': '~3.0' },
+89 silly resolved     bin: { brb: './bin/brb' },
+89 silly resolved     engines: { node: '>= 0.8.x' },
+89 silly resolved     readme: '# brb\n\nA simple CLI tool for notifying when a terminal task is done\n\n![OS X notification](http://cl.ly/VxU3/Screen%20Shot%202014-06-08%20at%2019.23.07.png)\n\n## Installation\n\n    $ npm install -g brb\n\n## Usage\n\n\t$ sleep 3; brb\n\n## Contributing\n\n1. Fork it ( https://github.com/vikfroberg/brb/fork )\n2. Create your feature branch (`git checkout -b my-new-feature`)\n3. Commit your changes (`git commit -am \'Add some feature\'`)\n4. Push to the branch (`git push origin my-new-feature`)\n5. Create a new Pull Request\n',
+89 silly resolved     readmeFilename: 'README.md',
+89 silly resolved     bugs: { url: 'https://github.com/vikfroberg/brb/issues' },
+89 silly resolved     _id: 'brb@1.0.1',
+89 silly resolved     dist: { shasum: 'c0f008f10f9ee247de24e5a4f4624e203f7006ac' },
+89 silly resolved     _from: 'brb@',
+89 silly resolved     _resolved: 'https://registry.npmjs.org/brb/-/brb-1.0.1.tgz' } ]
+90 info install brb@1.0.1 into /usr/lib
+91 info installOne brb@1.0.1
+92 info /usr/lib/node_modules/brb unbuild
+93 verbose tar unpack /home/fedo20/.npm/brb/1.0.1/package.tgz
+94 silly lockFile c99b466f-tar-usr-lib-node-modules-brb tar:///usr/lib/node_modules/brb
+95 verbose lock tar:///usr/lib/node_modules/brb /home/fedo20/.npm/c99b466f-tar-usr-lib-node-modules-brb.lock
+96 silly lockFile 72e98b90-fedo20-npm-brb-1-0-1-package-tgz tar:///home/fedo20/.npm/brb/1.0.1/package.tgz
+97 verbose lock tar:///home/fedo20/.npm/brb/1.0.1/package.tgz /home/fedo20/.npm/72e98b90-fedo20-npm-brb-1-0-1-package-tgz.lock
+98 silly gunzTarPerm modes [ '755', '644' ]
+99 error Error: EACCES, mkdir '/usr/lib/node_modules/brb'
+99 error  { [Error: EACCES, mkdir '/usr/lib/node_modules/brb']
+99 error   errno: 3,
+99 error   code: 'EACCES',
+99 error   path: '/usr/lib/node_modules/brb',
+99 error   fstream_type: 'Directory',
+99 error   fstream_path: '/usr/lib/node_modules/brb',
+99 error   fstream_class: 'DirWriter',
+99 error   fstream_stack:
+99 error    [ '/usr/lib/node_modules/fstream/lib/dir-writer.js:36:23',
+99 error      '/usr/lib/node_modules/mkdirp/index.js:37:53',
+99 error      'Object.oncomplete (fs.js:107:15)' ] }
+100 error Please try running this command again as root/Administrator.
+101 error System Linux 3.17.8-200.fc20.x86_64
+102 error command "node" "/usr/bin/npm" "install" "-g" "brb"
+103 error cwd /home/fedo20/Projetos/Site Imovels/superSite
+104 error node -v v0.10.33
+105 error npm -v 1.3.6
+106 error path /usr/lib/node_modules/brb
+107 error fstream_path /usr/lib/node_modules/brb
+108 error fstream_type Directory
+109 error fstream_class DirWriter
+110 error code EACCES
+111 error errno 3
+112 error stack Error: EACCES, mkdir '/usr/lib/node_modules/brb'
+113 error fstream_stack /usr/lib/node_modules/fstream/lib/dir-writer.js:36:23
+113 error fstream_stack /usr/lib/node_modules/mkdirp/index.js:37:53
+113 error fstream_stack Object.oncomplete (fs.js:107:15)
+114 verbose exit [ 3, true ]
