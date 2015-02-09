@@ -1,1 +1,2 @@
-Adicionar checkbox no search para "apenas suítes", fazendo com que a pesquisa ignore quartos e passe a pesquisar por suites.
+#!/bin/bash
+git push heroku master ; heroku run rake assets:precompile ; heroku restart;s
