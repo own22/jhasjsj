@@ -1,2 +1,2 @@
 #!/bin/bash
-git push heroku master ; heroku run rake assets:precompile ; heroku restart;s
+git push heroku master ; heroku run rake assets:precompile RAILS_ENV=production; heroku restart;s
