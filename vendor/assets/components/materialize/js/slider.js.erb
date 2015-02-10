@@ -106,8 +106,8 @@
         $indicators = $this.find('ul.indicators').find('li.indicator-item');
 
         if (!($(window).width() <= 600)) {
-          $('<div class="arrow arrow-left col l1"></div>').insertBefore('ul.indicators');
-          $('<div class="arrow arrow-right col l1"></div>').insertAfter('ul.indicators');
+          $('<div class="arrow arrow-left col l1">'+ $("#arrow-le").html() + '</div>').insertBefore('ul.indicators');
+          $('<div class="arrow arrow-right col l1">'+ $("#arrow-rig").html() + '</div>').insertAfter('ul.indicators');
         }
 
           // Handle clicks on arrows
