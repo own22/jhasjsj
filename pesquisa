@@ -1,2 +1,5 @@
 #!/bin/bash
 git push heroku master ; heroku run rake assets:precompile RAILS_ENV=production; heroku restart;s
+
+# heroku pg:reset DATABASE --confirm immense-meadow-4154
+# heroku run rake db:migrate
