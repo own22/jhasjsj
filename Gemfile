@@ -11,6 +11,7 @@ end
 group :production do
 	gem 'pg'
 	gem 'rails_12factor'
+	gem 'aws-sdk'
 end
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -47,4 +48,3 @@ gem 'paperclip'
 gem 'inline_svg'
 gem 'compass-rails'
 gem 'jquery-turbolinks'
-gem 'aws-sdk'
