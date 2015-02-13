@@ -4,6 +4,10 @@
 @import "materialize/sass/materialize";
 @import "compass";
 
+.drag-target {
+  width: 15px;
+}
+
 .container {
   width: 95%;
   max-width: 1900px;
@@ -400,9 +404,9 @@ footer {
 }
 
 @media #{$medium-only} {
-  a.button-collapse {
-    left:  6%;
-  }
+  // a.button-collapse {
+  //   left:  6%;
+  // }
 
   nav li {
     border-radius: 0;
