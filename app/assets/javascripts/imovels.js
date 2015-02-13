@@ -2,7 +2,7 @@ var style = function() {
   var width = $(window).width()
   // $('.slider').slider({full_width: true, height: 250});
 
-  $("#floatContato").sticky({topSpacing:300});
+  $("#floatContato").sticky({topSpacing:300, bottomSpacing:300});
 
   if (width <= 600) {    
     $(".showImovel").removeClass("card-panel");
