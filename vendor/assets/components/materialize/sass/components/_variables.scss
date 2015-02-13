@@ -46,7 +46,7 @@ $large-screen: 1200px !default;
 $medium-and-up: "only screen and (min-width : #{$small-screen-up})" !default;
 $large-and-up: "only screen and (min-width : #{$medium-screen-up})" !default;
 $small-and-down: "only screen and (max-width : #{$small-screen})" !default;
-$medium-and-down: "only screen and (max-width : #{$medium-screen})" !default;
+$medium-and-down: "only screen and (max-width : #{$medium-screen})" !default;      
 $medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width : #{$medium-screen})" !default;
 
 
@@ -62,6 +62,7 @@ $element-bottom-margin: ($gutter-width*2)/3 !default;
 /*** Navbar ***/
 $navbar-height: 180px;
 $navbar-height-mobile: 56px;
+$navbar-height-medium: 60px;
 
 
 /*** SideNav ***/

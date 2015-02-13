@@ -115,7 +115,22 @@ nav {
     position: fixed;
   }
 }
-@media #{$medium-and-up} {
+@media #{$medium-only} {
+  nav {
+    height: $navbar-height-medium;
+    line-height: $navbar-height-medium;
+
+    a.button-collapse {
+      height: $navbar-height-medium;
+      i {
+        height: $navbar-height-medium;
+        line-height: $navbar-height-medium;
+      }
+    }
+
+  }
+}
+@media #{$large-and-up} {
   nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
     height: $navbar-height;
     line-height: $navbar-height;
@@ -127,3 +142,4 @@ nav {
     height: $navbar-height;
   }
 }
+

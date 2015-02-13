@@ -32,7 +32,19 @@ h3 {
 }
 
 
+//------------------- Nav -----------------------//
+nav ul a {
+  font-size: 1.4rem;
+  font-weight: 400;
+  // color: #fff;
+  // display: block;
+  // padding: 0px 15px;
+}
 
+
+nav li {
+  line-height: 60px;
+}
 
 //------------------ ShowImovel  ---------------//
 
@@ -144,10 +156,6 @@ nav {
 }
 
 //----------------- Forms ----------------------//
-
-.formuPesqui {
-  margin-top: 50px;
-}
 
 form button {
   width: 100%;
@@ -361,6 +369,10 @@ footer {
 //-------------- Media Queries -----------------// 
 
 @media #{$medium-and-up} {
+
+.formuPesqui {
+  margin-top: 50px;
+}
   
   input[type=checkbox] {
     transform: scale(2.5);
@@ -373,7 +385,7 @@ footer {
     margin-top: 120px;
   }
   nav li {
-    line-height: 60px;
+    // line-height: 20px;
     border-radius: 5px 5px 0px 0px;
     -moz-border-radius: 5px 5px 0px 0px;
     -webkit-border-radius: 5px 5px 0px 0px;
@@ -388,6 +400,20 @@ footer {
 }
 
 @media #{$medium-only} {
+  a.button-collapse {
+    left:  6%;
+  }
+
+  nav li {
+    border-radius: 0;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+  }
+
+  .bottom-nav-menu {
+    margin-top: 0;
+  }
+
   .body {
     width: 100%;
     padding: 1rem;
@@ -497,6 +523,7 @@ footer {
   }
 
   .formuPesqui {
+  margin-top: -1px;
   form {
     margin-left: 5%;
     margin-right: 5%;
