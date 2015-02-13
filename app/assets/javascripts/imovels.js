@@ -4,18 +4,25 @@ var style = function() {
 
   $("#floatContato").sticky({topSpacing:300, bottomSpacing:300});
 
+  var altura = ($(".showImovel").innerWidth() * 0.977) / 1.6;
+
   if (width <= 600) {    
     $(".showImovel").removeClass("card-panel");
     $(".row.showRow").removeClass("row");
     $(".body.container").removeClass("container");
     $('.slider').slider({full_width: true, height: 250});
   } else {
-    $('.slider').slider({full_width: true, height: 500});
+    $('.slider').slider({full_width: true, height: altura});
   }
 
   if ( width >= 601 && width <= 992) {
     $(".retangle").addClass("card-panel");
   }
+
+  var size = $(".showImovel").innerWidth();
+  var imgsize = $(".slides .active").width();
+  console.log(size);
+  console.log("img size " + imgsize);
 };
 
 $(document).ready(style);
