@@ -42,7 +42,7 @@ h3 {
   color: #fff;
   font-family: 'Pacifico', cursive;
   font-size: 4rem;
-  margin-left: 80px;
+  // margin-left: 40px;
   margin-top: 60px;
   // margin-top: auto;
   // margin-bottom: auto;
@@ -57,9 +57,9 @@ nav ul a {
   // padding: 0px 15px;
 }
 
-nav li  a {
-  margin-right: 0.2em;
-  margin-left: 0.2em;
+nav li a {
+  margin-right: 0.5em;
+  margin-left: 0.5em;
 
 }
 
@@ -624,6 +624,6 @@ footer {
 
 @media #{$large-and-up} {
   nav .container {
-    width: 80%;
+    width: 70%;
   }
 }
