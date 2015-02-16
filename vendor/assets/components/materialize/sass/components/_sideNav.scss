@@ -95,17 +95,17 @@ ul.side-nav.fixed {
 
 
 // Fixed side-nav shown
-ul.side-nav.fixed {
-  left: 0;
-  position: fixed;
+// ul.side-nav.fixed {
+//   left: 0;
+//   position: fixed;
 
-  // Right Align
-  &.right-aligned {
-    will-change: right;
-    right: 0;
-    left: auto;
-  }
-}
+//   // Right Align
+//   &.right-aligned {
+//     will-change: right;
+//     right: 0;
+//     left: auto;
+//   }
+// }
 
 // Fixed sideNav hide on smaller
 @media #{$medium-and-down} {
