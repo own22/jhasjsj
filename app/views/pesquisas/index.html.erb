@@ -1,12 +1,18 @@
 <div class="container body">
-	<%= params.inspect %>
 	<%= render "layouts/search" %>
 	<a class="mostrar hide-on-med-and-up" href="/imoveis">Mostrar todos os imóveis</a>
 
-
-	<h2 class="hide-on-small-only">Resultado da pesquisa:</h2>
-	<a class="mostrar hide-on-small-only" href="/imoveis">Mostrar todos os imóveis</a>
-	<h2 class="hide-on-med-and-up">Resultado:</h2>
+	<% if params.count == 3 %>
+		<a href="/<%= params[:cidade] %>"><h2><%= params[:cidade] %></h2></a>
+		<a class="mostrar hide-on-small-only" href="/imoveis">Mostrar todos os imóveis</a>
+	<% elsif params.count == 4 %>
+		<a href="/<%= params[:cidade] %>"><h2><%= params[:cidade] %></a> > <a href="/<%= params[:cidade] %>/<%= params[:bairro] %>"><%= params[:bairro] %></h2></a>
+		<a class="mostrar hide-on-small-only" href="/imoveis">Mostrar todos os imóveis</a>
+	<% else %>
+		<h2 class="hide-on-small-only">Resultado da pesquisa:</h2>
+		<a class="mostrar hide-on-small-only" href="/imoveis">Mostrar todos os imóveis</a>
+		<h2 class="hide-on-med-and-up">Resultado:</h2>
+	<% end %>
 
 	<div class="row">
 	  <% @pesquisa.each do |imovel| %>

@@ -7,8 +7,8 @@
     <div class="col m12 l9">
       <div class="card-panel showImovel">
       <div class="endereso">
-        <a href="/pesquisas?utf8=✓&cidade[id]=<%= @imovel.cidade.id %>&venda=1&aluguel=1"><%= @imovel.cidade.nome %> </a> > 
-        <a href="/pesquisas?utf8=✓&cidade[id]=<%= @imovel.cidade.id %>&bairro[id]=<%= @imovel.bairro.id %>&venda=1&aluguel=1"><%= @imovel.bairro.nome %></a>
+        <a href="/<%= @imovel.cidade.nome %>"><%= @imovel.cidade.nome %> </a> > 
+        <a href="/<%= @imovel.cidade.nome %>/<%= @imovel.bairro.nome %>"><%= @imovel.bairro.nome %></a>
       </div>
         <div class="slider">
           <ul class="slides">

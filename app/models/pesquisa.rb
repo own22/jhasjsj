@@ -16,13 +16,21 @@ class Pesquisa < ActiveRecord::Base
       end
 
       
-      if !(cidade.nil?)
-        imovels = imovels.where("cidade_id = ?", cidade["id"]) unless cidade["id"].blank?
+
+      unless cidade.blank? || cidade.nil?
+        cidade = Cidade.where("nome LIKE ?", cidade).first
+        imovels = imovels.where("cidade_id = ?", cidade.id)
+      # imovels = imovels.where("cidade_id = ?", cidade["id"]) unless cidade["id"].blank?
       end
       
-      if !(bairro.nil?)
-        imovels = imovels.where("bairro_id = ?", bairro["id"]) unless bairro["id"].blank?
+      unless bairro.blank? || bairro.nil?
+        bairro = Bairro.where("nome LIKE ?", bairro).first
+        imovels = imovels.where("bairro_id = ?", bairro.id)
+      # imovels = imovels.where("cidade_id = ?", cidade["id"]) unless cidade["id"].blank?
       end
+      # if !(bairro.nil?)
+      #   imovels = imovels.where("bairro_id = ?", bairro["id"]) unless bairro["id"].blank?
+      # end
       
       if !(tipo.nil?)
         imovels = imovels.where("tipo_id = ?", tipo["id"]) unless tipo["id"].blank?

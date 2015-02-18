@@ -2,8 +2,9 @@ Rails.application.routes.draw do
   root 'home#index'
   resources :imovels, :path => "imovel"
 
+  resources :pesquisas, :path => "/pesquisa"
   get '/:cidade', to: 'pesquisas#index'
-  resources :pesquisas, :path => "pesquisa"
+  get '/:cidade/:bairro', to: 'pesquisas#index'
 
 
   # get ':action' => 'static#:action'

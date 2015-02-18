@@ -7,11 +7,14 @@
   </div>
 </div>
 
+<%= params.inspect %>
+
 <div class="container body">
 <%= render "layouts/search" %>
 
 <h2 class="hide-on-med-and-up">Imóveis</h2>
   <div class="row">
+
     <% @destaques.each do |imovel| %>
       <%= render "layouts/thumb", :imovel => imovel %>
     <% end %>

@@ -4,12 +4,14 @@
 
   <div class="col s12 m6 l3">
     <label class="hide-on-small-only">Cidade:</label>
-      <%= collection_select :cidade, :id, Cidade.order(:nome), :id, :nome, :include_blank => "--- Cidade ---" , :selected => @cidade_select %>
+      <%= select_tag(:cidade, options_from_collection_for_select(Cidade.all, 'nome', 'nome', :selected => params[:cidade]), :include_blank => "--- Cidade ---") %>
+<!--       <%= collection_select :cidade, :id, Cidade.order(:nome), :id, :nome, :include_blank => "--- Cidade ---" , :selected => @cidade_select %> -->
   </div>
   
   <div class="col s12 m6 l4">
       <label class="hide-on-small-only">Bairro:</label>
-      <%= grouped_collection_select :bairro, :id, Cidade.all.order(:nome), :bairros, :nome, :id, :nome, :include_blank => "--- Bairro ---", :selected => @bairro_select %>
+      <%= select_tag(:bairro, options_from_collection_for_select(Bairro.all, 'nome', 'nome', :selected => params[:bairro]), :include_blank => "--- Bairro ---") %>
+<!--       <%= grouped_collection_select :bairro, :id, Cidade.all.order(:nome), :bairros, :nome, :id, :nome, :include_blank => "--- Bairro ---", :selected => @bairro_select %> -->
   </div>    
   
   <div class="col s12 m6 l3">
