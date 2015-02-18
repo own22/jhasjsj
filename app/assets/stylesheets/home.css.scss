@@ -253,7 +253,7 @@ select {
 
 h2 {
   margin: 70px 0 0 0;
-  color: #00bfa5;
+  color: #00b0ff;
   font-weight: 300;
   font-size: 3.56rem;
   line-height: 3.916rem;
@@ -396,6 +396,8 @@ footer {
 
 .formuPesqui {
   margin-top: 50px;
+  border-top: 4px solid rgba(25,118,210,.8);
+  border-radius: 15px 15px 0 0;
 }
   
   input[type=checkbox] {
@@ -537,9 +539,12 @@ footer {
 }
   
 @media #{$small-and-down} {
-.brand-logo h2 {
-  font-size: 2.5rem;
-}
+  .formuPesqui {
+
+  }
+  .brand-logo h2 {
+    font-size: 2.5rem;
+  }
 
   .imovel {
     height: 330px;
@@ -554,17 +559,23 @@ footer {
   }
 
   .formuPesqui {
-  padding-top: 25px;
-  padding-bottom: 15px;
-  margin-top: -1px;
-  form {
-    margin-left: 5%;
-    margin-right: 5%;
+    box-shadow: none;
+    border-top: 4px solid rgba(25,118,210,.8);
+    border-bottom: 1px solid #CCC;
+    // border-radius: 5px 5px 0 0; 
 
-    .checkbox {
-      margin-bottom: 15px;
+    padding-top: 25px;
+    padding-bottom: 15px;
+    margin-top: -4px;
+
+    form {
+      margin-left: 5%;
+      margin-right: 5%;
+
+      .checkbox {
+        margin-bottom: 15px;
+      }
     }
-  }
 }
 
   .infoList {
@@ -594,7 +605,7 @@ footer {
 }
 
   h2 {
-    color: #00bfa5;
+    // color: #00bfa5;
     margin-bottom: 30px;
     margin-top: 40px;
   }
