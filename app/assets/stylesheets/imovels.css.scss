@@ -5,7 +5,15 @@
 // .retangle {
 // 	position: relative;
 // }
+.new_imovel {
+	.addCamp{
+		margin-top: 40px;
+	}
 
+	#imovel_titulo, #imovel_descricao, #imovel_descricao_curta {
+		width: 60%;
+	}
+}
 
 .contatoForm:before {
  	content:"";

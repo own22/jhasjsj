@@ -11,70 +11,111 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :cidade_id %>
-    <%= f.collection_select :cidade_id, Cidade.order(:nome), :id, :nome, :prompt => "Escolha a cidade" %>
-    ou crie uma cidade :
-    <%= f.text_field :nova_cidade%>
+  <div class="field row">
+     <div class="col l5">
+      <%= f.label :cidade_id %>
+      <%= f.collection_select :cidade_id, Cidade.order(:nome), :id, :nome, :prompt => "Escolha a cidade" %>
+    </div>
+    <div class="col l7 addCamp">
+      ou adiciona uma nova cidade :
+      <%= f.text_field :nova_cidade%>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :bairro_id %>
-    <%= f.grouped_collection_select :bairro_id, Cidade.all.order(:nome), :bairros, :nome, :id, :nome, :prompt => "Escolha o bairro" %>
+  <div class="field row">
+    <div class="col l5">
+      <%= f.label :bairro_id %>
+      <%= f.grouped_collection_select :bairro_id, Cidade.all.order(:nome), :bairros, :nome, :id, :nome, :prompt => "Escolha o bairro" %>
+    </div>
+    <div class="col l7 addCamp">
     ou crie um bairro:
     <%= f.text_field :novo_bairro%>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :tipo_id %>
-    <%= f.collection_select :tipo_id, Tipo.all, :id, :nome, :prompt => "Selecione o tipo de imóvel" %>
-    ou crie um tipo:
-    <%= f.text_field :novo_tipo %>
+  <div class="field row">
+    <div class="col l5">
+      <%= f.label :tipo_id %>
+      <%= f.collection_select :tipo_id, Tipo.all, :id, :nome, :prompt => "Selecione o tipo de imóvel" %>
+    </div>
+    <div class="col l7 addCamp">
+      ou crie um tipo:
+      <%= f.text_field :novo_tipo %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :venda %><br>
-    <%= f.check_box :venda, class: "checkbox" %>
+  <div class="row">
+    <div class="col l2">
+      <div class="field">
+        <%= f.label :venda %><br>
+        <%= f.check_box :venda, class: "checkbox" %>
+      </div>
+    </div>
+    <div class="col l2">
+      <div class="field">
+        <%= f.label :aluguel %><br>
+        <%= f.check_box :aluguel, class: "checkbox" %>
+      </div>
+    </div>
+    <div class="col l2">
+      <div class="field">
+        <%= f.label :destaque %><br>
+        <%= f.check_box :destaque, class: "checkbox" %>
+      </div>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :aluguel %><br>
-    <%= f.check_box :aluguel, class: "checkbox" %>
+
+  <div class="row">
+    <div class="col l2">
+      <div class="field">
+        <%= f.label :quartos %><br>
+        <%= f.number_field :quartos %>
+      </div>
+    </div>
+    <div class="col l2">
+      <div class="field">
+        <%= f.label :banheiros %><br>
+        <%= f.number_field :banheiros %>
+      </div>
+    </div>
+    <div class="col l2">
+      <div class="field">
+        <%= f.label :suites %><br>
+        <%= f.number_field :suites %>
+      </div>
+    </div>
+    <div class="col l2">
+      <div class="field">
+        <%= f.label :vagas %><br>
+        <%= f.number_field :vagas %>
+      </div>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :destaque %><br>
-    <%= f.check_box :destaque, class: "checkbox" %>
-  </div>
-  <div class="field">
-    <%= f.label :quartos %><br>
-    <%= f.number_field :quartos %>
-  </div>
-  <div class="field">
-    <%= f.label :banheiros %><br>
-    <%= f.number_field :banheiros %>
-  </div>
-  <div class="field">
-    <%= f.label :suites %><br>
-    <%= f.number_field :suites %>
-  </div>
-  <div class="field">
-    <%= f.label :vagas %><br>
-    <%= f.number_field :vagas %>
-  </div>
+
   <div class="field">
     <%= f.label :preco %><br>
     <%= f.number_field :preco %>
   </div>
-  <div class="field">
-    <%= f.label :titulo %><br>
-    <%= f.text_field :titulo %>
+
+  <div class="row">
+     <div class="field">
+       <%= f.label :titulo %><br>
+        <%= f.text_field :titulo %>
+     </div>
+   
   </div>
-  <div class="field">
-    <%= f.label :descricao %><br>
-    <%= f.text_area :descricao %>
+
+  <div class="row">
+    <div class="field">
+      <%= f.label :descricao %><br>
+      <%= f.text_area :descricao, rows: "10" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :descricao_curta %><br>
-    <%= f.text_area :descricao_curta %>
+  <div class="row">
+    <div class="field">
+      <%= f.label :descricao_curta %><br>
+      <%= f.text_area :descricao_curta %>
+    </div>
   </div>
 
   <div class="field">
