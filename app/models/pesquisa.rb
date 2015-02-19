@@ -20,7 +20,6 @@ class Pesquisa < ActiveRecord::Base
       unless cidade.blank? || cidade.nil?
         cidade = Cidade.where("nome LIKE ?", cidade).first
         imovels = imovels.where("cidade_id = ?", cidade.id)
-      # imovels = imovels.where("cidade_id = ?", cidade["id"]) unless cidade["id"].blank?
       end
       
       unless bairro.blank? || bairro.nil?
