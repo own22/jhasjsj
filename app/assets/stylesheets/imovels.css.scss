@@ -14,10 +14,21 @@
 			& li {
 				margin: 5px;
 			}
+
+			.edit {
+				color: #2962ff;
+			}
+
+			.delete {
+				color: #d50000;	
+			}
 		}
 
 
-
+	[data-readmore-toggle] {
+		color: #0288d1; 
+		font-weight: 500;
+	}
 
 
 
@@ -115,7 +126,7 @@
 
 }
 
-.new_imovel {
+.form_imovel {
 	.addCamp{
 		margin-top: 40px;
 	}

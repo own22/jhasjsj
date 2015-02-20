@@ -23,27 +23,27 @@
   </div>
 
   <div class="col l5">
-    <h4><%= imovel.titulo %></h4>
+    <h4><%= imovel.titulo %></h4><p class="mostrar"> <%= imovel.cidade.nome %> > <%= imovel.bairro.nome %> </p>
     <p class="text"><%= imovel.descricao %></p>
   </div>
 
   <div class="col l3">
   <ul>
-        <ul class="infoList">
-          <li><%= inline_svg("bed.svg", class: "icone2" ) %><%= imovel.quartos %> quartos <% unless imovel.suites == 0 || imovel.suites.nil? %>, <%= imovel.suites %> suíte<% unless imovel.suites <= 1 %>s<% end %><% end %></li>
-          <li><%= inline_svg("shower.svg", class: "icone2") %><%= imovel.banheiros %> banheiros <% unless imovel.suites == 0 || imovel.suites.nil? %>, <%= imovel.suites %> d<% if imovel.suites == 1 %>a<% else %>e<% end %> suíte<% unless imovel.suites <= 1 %>s<% end %><% end %></li>
-          <% unless imovel.vagas == 0 || imovel.vagas.nil? %>
-            <li><%= inline_svg("sedan.svg", class: "icone2") %><%= imovel.vagas %> vagas de garagem</li>
-          <% end %>
-        </ul>
+    <ul class="infoList">
+      <li><%= inline_svg("bed.svg", class: "icone2" ) %><%= imovel.quartos %> quartos <% unless imovel.suites == 0 || imovel.suites.nil? %>, <%= imovel.suites %> suíte<% unless imovel.suites <= 1 %>s<% end %><% end %></li>
+      <li><%= inline_svg("shower.svg", class: "icone2") %><%= imovel.banheiros %> banheiros <% unless imovel.suites == 0 || imovel.suites.nil? %>, <%= imovel.suites %> d<% if imovel.suites == 1 %>a<% else %>e<% end %> suíte<% unless imovel.suites <= 1 %>s<% end %><% end %></li>
+      <% unless imovel.vagas == 0 || imovel.vagas.nil? %>
+        <li><%= inline_svg("sedan.svg", class: "icone2") %><%= imovel.vagas %> vagas de garagem</li>
+      <% end %>
+    </ul>
   </ul>
   </div>
   <div class="col l1 center">
   <ul class="crud">
 <!--     <li><%= form_for imovel do |f| %><%= f.check_box :destaque, class: "checkbox" %><%= f.submit %><% end %></li>
- -->    <li><a href="/imovel/<%= imovel.id %>">Exibir</a></li>
-    <li><%= link_to 'Modificar', edit_imovel_path(imovel) %></li>
-    <li><%= link_to 'Deletar', imovel, method: :delete, data: { confirm: 'Tem certeza que deseja deletar este imóvel?' } %></li>
+    <li><a href="/imovel/<%= imovel.id %>">Exibir</a></li> -->
+    <li><%= link_to 'Modificar', edit_imovel_path(imovel), class: "edit" %></li>
+    <li><%= link_to 'Deletar', imovel, method: :delete, data: { confirm: 'Tem certeza que deseja deletar este imóvel?' }, class: "delete" %></li>
   </ul>
   </div>
 </div>
