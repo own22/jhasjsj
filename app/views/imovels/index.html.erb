@@ -1,5 +1,6 @@
 <div class="container  index">
 <h1>Listing imovels</h1>
+<%= link_to '+', new_imovel_path, class: "btn-floating btn-large waves-effect waves-light red" %>
 
 <% @imovels.each do |imovel| %>
 <div class="card-panel row imvInd">
@@ -40,7 +41,7 @@
   <div class="col l1 center">
   <ul class="crud">
 <!--     <li><%= form_for imovel do |f| %><%= f.check_box :destaque, class: "checkbox" %><%= f.submit %><% end %></li>
- -->    <li><%= link_to 'Exibir', imovel %></li>
+ -->    <li><a href="/imovel/<%= imovel.id %>">Exibir</a></li>
     <li><%= link_to 'Modificar', edit_imovel_path(imovel) %></li>
     <li><%= link_to 'Deletar', imovel, method: :delete, data: { confirm: 'Tem certeza que deseja deletar este imóvel?' } %></li>
   </ul>
@@ -49,8 +50,9 @@
 <% end %>
 
 <br>
+<!--   <a class="btn-floating btn-large waves-effect waves-light red"><i class="mdi-content-add"></i></a>
+ -->
 
-<%= link_to 'New Imovel', new_imovel_path %>
 </div>
 
 <%= javascript_include_tag "readmore" %>
