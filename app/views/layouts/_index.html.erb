@@ -1,0 +1,28 @@
+<% @imovels.each do |imovel| %>
+<div class="card-panel row">
+	<div class="col l3">
+    <%= imovel.venda %><%= imovel.aluguel %>
+	  <% unless imovel.fotos.empty? %>
+      <%= image_tag(imovel.fotos.first.image.url(:thumb)) %>
+    <% end %>
+	</div>
+	<div class="col l5">
+    <h2><%= imovel.titulo %></h2>
+    <p><%= imovel.descricao %></p>
+	</div>
+	<div class="col l2">
+	<ul>
+    <li><%= imovel.quartos %></li>
+    <li><%= imovel.banheiros %></li>
+    <li><%= imovel.suites %></li>
+    <li><%= imovel.vagas %></li>
+  </ul>
+  </div>
+  <div class="col l1">
+  	<%= form_for imovel do |f| %><%= f.check_box :destaque, class: "checkbox" %><%= f.submit %><% end %>
+    <%= link_to 'Show', imovel %>
+    <%= link_to 'Edit', edit_imovel_path(imovel) %>
+    <%= link_to 'Destroy', imovel, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+</div>
+<% end %>

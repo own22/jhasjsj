@@ -1,4 +1,5 @@
 var style = function() {
+
   var width = $(window).width()
   // $('.slider').slider({full_width: true, height: 250});
 
